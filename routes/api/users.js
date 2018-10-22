@@ -11,7 +11,7 @@ const User = require('../../models/User');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
-router.get('/current', passport.authenticate('jsonwebtoken', { session: false }), (req, res) => {
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
         id: req.user.id,
         name: req.user.name,
