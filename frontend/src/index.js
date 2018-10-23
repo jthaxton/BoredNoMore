@@ -8,7 +8,7 @@ import jwt_decode from "jwt-decode";
 import * as APIUtil from "./util/session_api_util";
 import configureStore from "./store/store";
 
-import registerServiceWorker from "./registerServiceWorker";
+// import registerServiceWorker from "./registerServiceWorker";
 
 document.addEventListener('DOMContentLoaded', () => {
     let store = configureStore();
@@ -32,9 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 const root = document.getElementById('root');    
-ReactDOM.render(<App store={store} />, root);
+ReactDOM.render(<p> test test </p>, root);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-registerServiceWorker();
+// registerServiceWorker();
+
+});
