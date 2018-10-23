@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 import jwt_decode from 'jwt-decode';
 
 const $ = window.$;
 export const GET_ERRORS = 'GET_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
-export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
 
 export const setAuthToken = token => {
     if (token) {
@@ -67,4 +67,11 @@ export const logoutUser = () => dispatch => {
     setAuthToken(false);
     // Set current user to {} which will set isAuthenticated to false
     dispatch(setCurrentUser({}));
+};
+
+export const setCurrentUser = decoded => {
+    return {
+        type: SET_CURRENT_USER,
+        payload: decoded
+    };
 };
