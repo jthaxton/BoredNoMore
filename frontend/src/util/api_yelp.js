@@ -39,7 +39,6 @@ const apiYelp = ({
     // open_at: 1540320750
   };
 
-
   const searchRequest = Object.assign(
     searchLocation,
     searchCategories,
