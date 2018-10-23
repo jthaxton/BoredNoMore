@@ -23,7 +23,10 @@ export default class resultsPage extends Component {
             <li>
                 <button 
                 className="result-page-logout"
-                onClick() => this.props.logout()
+                onClick: function(){
+                    this.props.logout().bind(this)
+                }
+                onClick= {() => this.props.logout()}
                 >Logout</button>
             </li>
           </ul>
