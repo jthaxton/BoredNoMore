@@ -53,6 +53,7 @@ const apiYelp = ({
   return client.search(searchRequest)
 };
 
+
 apiYelp({
   searchLocationByLatLong: {
     latitude: 37.7986717,
