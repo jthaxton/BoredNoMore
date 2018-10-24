@@ -1,8 +1,6 @@
 import React from 'react';
 
-import React, { Component } from 'react'
-
-export default class resultsPage extends Component {
+export default class SplashComponent extends React.Component {
     constructor(props){
         super(props)
     } 
@@ -22,9 +20,6 @@ export default class resultsPage extends Component {
                     Take Quiz
                 </button>
             </div>
-
-
-
         </div>
         )
     }

@@ -30,3 +30,30 @@
     transform: rotate(360deg);
   }
 }
+
+.splash-page{
+  /* background-color:red; */
+  background-image: url('https://stmed.net/sites/default/files/restaurant-wallpapers-28840-4336902.jpg');
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
+}
+.splash-top-nav {
+  display: flex;
+  color: papayawhip;
+}
+.splash-top-nav h3{
+  margin: auto;
+}
+.splash-content {
+  /* background-color: lightblue; */
+  position: absolute;
+  display: block;
+  color: papayawhip;
+  width: 400px;
+  margin: auto;
+  top: 40%;
+  left: 35%;
+
+}
+
