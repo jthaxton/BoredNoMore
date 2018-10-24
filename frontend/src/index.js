@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Root from './components/root';
 import * as serviceWorker from './serviceWorker';
 
 import jwt_decode from "jwt-decode";
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 const root = document.getElementById('root');    
-ReactDOM.render(<p> test test </p>, root);
+ReactDOM.render(<Root store = {store}/>, root);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

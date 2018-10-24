@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class SessionForm extends React.Component {
+class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     update(field) {
@@ -24,17 +25,18 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {Object.values(this.props.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
+    // renderErrors() {
+    //     return (
+    //         <ul>
+    //             {Object.values(this.props.errors).map((error, i) => (
+    //                 <li key={`error-${i}`}>
+    //                     {error}
+    //                 </li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
+    // {this.renderErrors()}
 
     render() {
         return (
@@ -42,7 +44,6 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     Welcome back {this.props.name}
           <br />
-                    {this.renderErrors()}
                     <div className="signup-form">
                         <br />
                         <label>What should we call you?
@@ -74,4 +75,4 @@ class SessionForm extends React.Component {
     }
 }
 
-export default withRouter(SessionForm);
+export default withRouter(SignupForm);
