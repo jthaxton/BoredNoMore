@@ -1,28 +1,27 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PreferenceSchema = new Schema({
+const PastChoiceSchema = new Schema({
     zip: {
         type: Number,
         required: true
     },   
-    cuisine: {
+    restaurants: {
+        type: Array,
+        required: false
+    },
+    movies: {
         type: Array,
         required: false 
     },
-    movieGenre: {
+    streams: {
         type: Array,
         required: false
     },
-    streamGenre: {
+    liveEvents: {
         type: Array,
-        required: false
-    },
-    liveEventType: {
-        type: Array,
-        required: false
+        required: false 
     }
-
 });
 
-module.exports = Preference = mongoose.model("preference", PreferenceSchema);
+module.exports = PastPreference = mongoose.model("pastChoice", PastChoiceSchema)
