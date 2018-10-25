@@ -48,7 +48,7 @@ const UserSchema = new Schema({
       required: false
     }
   },
-  pastPreference: {
+  pastChoices: {
     zip: {
       type: Number,
       required: false
