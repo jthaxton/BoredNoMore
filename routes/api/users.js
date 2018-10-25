@@ -13,12 +13,34 @@ router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
-        id: req.user.id,
-        email: req.user.email,
-        preferences: req.user.preferences
+        user: req.user
     });
-})
+});
+// id: req.user.id,
+// email: req.user.email,
+// preferences: req.user.preferences
 
+// router.update("/current-update",passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     res.json({
+//       user: req.user
+//     });
+//   }
+// );
+
+router.patch("/preferences", passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateRegisterInput(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+    res.json({
+      preferences: req.user.preferences,
+      pastChoices: req.user.pastChoices
+    });
+  }
+);
+// info: req.user.info,
 
 router.post("/register", (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
@@ -74,7 +96,6 @@ router.post("/login", (req, res) => {
     
     
     User.findOne({"info.email": email} ).then(user => {
-        console.log({info:{email}});
         
         if (!user) {
             errors.email = "This user does not exist";
