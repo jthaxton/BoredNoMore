@@ -29,7 +29,7 @@ export default class SplashComponent extends React.Component {
     }
 
     componentDidMount() {
-        setInterval(this.changeImage, 3000)
+        setInterval(this.changeImage, 5000)
         // setTimeout(this.changeImage, 2000)
 
     }
@@ -50,7 +50,6 @@ export default class SplashComponent extends React.Component {
                 <button className="quiz-button">
                     Take Quiz
                 </button>
-                <h1>{this.state.background_index}</h1>
 
             </div>
              {/* <img className="splash-background-image" src={ this.state.background_images[2] } /> */}
