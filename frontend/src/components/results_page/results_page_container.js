@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import { logout } from '../../actions/session_utils'; //we will make this eventually
+import { logoutUser } from '../../util/session_api_util'; //we will make this eventually
 
-import result_page from '/.result_page';
+import resultPage from './results_page.jsx';
 
 const mstp = (state) => { //likely the results we want to render back
     return {
@@ -12,8 +12,8 @@ const mstp = (state) => { //likely the results we want to render back
 
 const mdtp = (dispatch) => { 
     return{
-        logout: () => dispatch(logout)
+        logout: () => dispatch(logoutUser)
     }
 }
 
-export default (mstp, mdtp)(result_page);
+export default connect(mstp, mdtp)(resultPage);

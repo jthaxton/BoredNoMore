@@ -8,12 +8,14 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
+import resultsPageContainer from './results_page/results_page_container';
 
 const Root = ({store}) => (
   <div>
     <Provider store = {store}>
     <HashRouter>
       <Route path="/" component={signup_form_container} />
+      <Route path="/results" component={resultsPageContainer} />
     </HashRouter>
     </Provider>
   </div>
