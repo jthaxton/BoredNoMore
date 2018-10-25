@@ -1,0 +1,92 @@
+.splash-page{
+  background-color: rgba(0,0,0,1);
+  position: relative;
+  /* background-image: url('https://stmed.net/sites/default/files/restaurant-wallpapers-28840-4336902.jpg'); */
+  /* background-image: url('http://26dmsk320msi1cz9hz4drgl5.wpengine.netdna-cdn.com/wp-content/uploads/2018/03/DC_NatTheat_MikeHume_1000x470.jpg'); */
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+
+
+}
+.splash-top-nav {
+  display: flex;
+  color: papayawhip;
+}
+.splash-top-nav h3{
+  margin: auto;
+  font-size: 35px;
+}
+.splash-content {
+  /* background-color: red; */
+  position: absolute;
+  display: block;
+  color: papayawhip;
+  width: 400px;
+  margin: auto;
+  top: 40%;
+  left: 35%;
+}
+
+/* body {
+  background-color: black;
+} */
+
+
+.index-list-button{
+  background: transparent;
+  height: 50px;
+  border: none;
+}
+.splash-top-nav img {
+  height: 35px;
+  width: 35px;
+}
+button {
+  cursor: pointer;
+}
+
+.quiz-button{
+  position: absolute;
+  background-color: papayawhip;
+  margin: auto;
+  left: 70px;
+  width: 225px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.splash-background-image {
+  position: absolute;
+  background-color: black;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -2;
+
+	animation-name: fade;
+	/* animation-timing-function: ease-in-out; */
+  animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+}
+
+@keyframes fade {
+	0% {
+		opacity: .125;
+	}
+  /* 10% {
+    opacity: .5;
+  } */
+	50% {
+		opacity: 1;
+	}
+	/* 90% {
+		opacity: .5;
+	} */
+	100% {
+		opacity: .125;
+	}
+}

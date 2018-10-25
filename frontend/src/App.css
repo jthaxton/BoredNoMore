@@ -1,3 +1,5 @@
+import './splash'
+
 .App {
   text-align: center;
 }
@@ -31,8 +33,8 @@
   }
 }
 
-.splash-page{
-  /* background-color:red; */
+/* .splash-page{ */
+  /* background-color:red;
   background-image: url('https://stmed.net/sites/default/files/restaurant-wallpapers-28840-4336902.jpg');
   background-size: 100%;
   width: 100vw;
@@ -46,7 +48,7 @@
   margin: auto;
 }
 .splash-content {
-  /* background-color: lightblue; */
+  background-color: red;
   position: absolute;
   display: block;
   color: papayawhip;
@@ -54,6 +56,5 @@
   margin: auto;
   top: 40%;
   left: 35%;
-
-}
+} */
 
