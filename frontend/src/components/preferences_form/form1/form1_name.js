@@ -6,7 +6,7 @@ export default class form1_Name extends Component {
     constructor(props){
         super(props);
         this.state = {
-            name: "Me",
+            name: "Me"
         }
     }
 
