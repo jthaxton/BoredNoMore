@@ -6,17 +6,29 @@
   background-size: 100%;
   width: 100vw;
   height: 100vh;
-  z-index: -3;
-
-
+  z-index: 0;
 }
+
+.splash-page div{
+  position: absolute;
+  z-index: 3;
+}
+
+/* .splash-page button{
+  position: absolute;
+  background-color: red;
+  z-index: 5;
+} */
 .splash-top-nav {
   display: flex;
   color: papayawhip;
+  z-index: 3;
 }
 .splash-top-nav h3{
+  position: absolute;
   margin: auto;
   font-size: 35px;
+  left: 43vw;
 }
 .splash-content {
   /* background-color: red; */
@@ -55,6 +67,7 @@ button {
   width: 225px;
   height: 50px;
   border-radius: 25px;
+  /* z-index: 3; */
 }
 
 .splash-background-image {
@@ -66,13 +79,13 @@ button {
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: -2;
+  z-index: 1;
 
 	animation-name: fade;
 	/* animation-timing-function: ease-in-out; */
   animation-timing-function: ease;
 	animation-iteration-count: infinite;
-	animation-duration: 5s;
+	animation-duration: 8s;
 }
 
 @keyframes fade {
@@ -85,9 +98,9 @@ button {
 	50% {
 		opacity: 1;
 	}
-	/* 90% {
-		opacity: .5;
-	} */
+	75% {
+		opacity: 1;
+	}
 	100% {
 		opacity: .125;
 	}

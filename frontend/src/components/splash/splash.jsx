@@ -5,12 +5,12 @@ export default class SplashComponent extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            background_index: 0,
+            background_index: 3,
             background_images: [
+                'https://stmed.net/sites/default/files/restaurant-wallpapers-28840-4336902.jpg',
             'https://s3-us-west-2.amazonaws.com/marcato.west/venues_files/photos/733768/original.jpg?1493902675',
-            'https://stmed.net/sites/default/files/restaurant-wallpapers-28840-4336902.jpg',
-            'https://s3-us-west-2.amazonaws.com/marcato.west/venues_files/photos/733768/original.jpg?1493902675',
-            'https://stmed.net/sites/default/files/restaurant-wallpapers-28840-4336902.jpg'
+            'https://images.unsplash.com/photo-1521967906867-14ec9d64bee8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63f399f203a46024cdee72cd6aa42163&auto=format&fit=crop&w=1050&q=80',
+            'https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjIxMTIzfQ&s=c869c98d5090b01bc44d53eac1988350&auto=format&fit=crop&w=1053&q=80'
         ] 
         }
         this.changeImage = this.changeImage.bind(this)
@@ -29,7 +29,7 @@ export default class SplashComponent extends React.Component {
     }
 
     componentDidMount() {
-        setInterval(this.changeImage, 5000)
+        setInterval(this.changeImage, 8000)
         // setTimeout(this.changeImage, 2000)
 
     }
