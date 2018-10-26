@@ -73,10 +73,23 @@ li {
 .results{
     border: 1px solid black;
     float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 80%;
+    flex-wrap: wrap;
+    padding-left: 125px;
+    padding-right: 125px;
+}
 
+.results div{
+    height: 250px;
+    width: 350px;
 }
 
 .results li {
     border: 1px solid orange;
+    margin: 50px;
 }
 

@@ -24,7 +24,7 @@ export default class resultsPage extends Component {
           </div>
 
           <div className="result-main-body">
-            <aside className="side-navbar">
+            {/* <aside className="side-navbar">
               <ul>
                 <li>My Profile</li>
                 <li />
@@ -36,30 +36,29 @@ export default class resultsPage extends Component {
                   </button>
                 </li>
               </ul>
-            </aside>
+            </aside> */}
 
             <ul className="results">
               <li className="streamSelection">
                 {/* onClick ={() => <Modal selection="stream"/>}> */}
-                <div>stand-in for image</div>
+                <div className="image-stand-in">stand-in for image</div>
                 {/* <img src="some url that we will likely get from props" /> */}
                 {/* <h4>{this.props.streamSelection}</h4> */}
               </li>
 
               <li className="restaurantSelection">
-                <div>stand-in for image</div>
-                {/* <img src="some url that we will likely get from props" /> */}
+                <div className="image-stand-in">stand-in for image</div>                {/* <img src="some url that we will likely get from props" /> */}
                 {/* <h4>{this.props.restaurantSelection}</h4> */}
               </li>
 
               <li className="movieSelection">
-                <div>stand-in for image</div>
+                <div className="image-stand-in">stand-in for image</div>
                 {/* <img src="some url that we will likely get from props" /> */}
                 {/* <h4>{this.props.movieSelection}</h4> */}
               </li>
 
               <li className="eventSelection">
-                <div>stand-in for image</div>
+                <div className="image-stand-in">stand-in for image</div>
                 {/* <img src="some url that we will likely get from props" /> */}
                 {/* <h4>{this.props.eventSelection}</h4> */}
               </li>
