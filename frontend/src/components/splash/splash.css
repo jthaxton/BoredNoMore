@@ -82,7 +82,6 @@ button {
   z-index: 1;
 
 	animation-name: fade;
-	/* animation-timing-function: ease-in-out; */
   animation-timing-function: ease;
 	animation-iteration-count: infinite;
 	animation-duration: 8s;
@@ -92,8 +91,8 @@ button {
 	0% {
 		opacity: .125;
 	}
-  /* 10% {
-    opacity: .5;
+  /* 25% {
+    opacity: 1;
   } */
 	50% {
 		opacity: 1;
@@ -105,3 +104,39 @@ button {
 		opacity: .125;
 	}
 }
+
+.modal{
+  position: absolute;
+  background-color: rgba(10,10,10,1);
+  color: white;
+  top: 50%;
+  /* left: 5%; */
+  width: 65%;
+  height: 100%;
+  right: auto;
+  bottom: auto;
+}
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000096;
+  }
+
+.modal-list{
+  /* display: flex; */
+  list-style: none;
+  /* margin: auto; */
+}
+.modal-list li{
+  position: relative;
+  margin: auto;
+  /* background-color: blue; */
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 90px;
+}
+
