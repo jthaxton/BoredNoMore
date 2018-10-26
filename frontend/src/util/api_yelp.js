@@ -1,5 +1,5 @@
 const yelp = require('yelp-fusion');
-const apiKeyYelp = require("../../../config/keys").apiKeyYelp;
+const apiKeyYelp = require("./keys").apiKeyYelp;
 
 const client = yelp.client(apiKeyYelp);
 
@@ -22,6 +22,7 @@ export const apiYelp = (searchOptions) => {
   // // location: 'san francisco, ca'
 
   const searchDefaults = {
+    dataType: "jsonp",
     offset: 0, // AKA next page
     price: [1, 2], // [1,2,3,4] $ $$ $$$ $$$$
     open_now: true, // OR open_at: 1540320750
@@ -39,18 +40,18 @@ export const apiYelp = (searchOptions) => {
 
 };
 
-apiYelp({
-    latitude: 37.7986717,
-    longitude: -122.4012891,
-    categories: ['restaurants', 'food'],
-    limit: 1
-  })
-  .then(response => {
-    console.log(JSON.stringify(response.jsonBody.businesses))
-  })
-  .catch(e => {
-    console.log(e);
-  });
+// apiYelp({
+//     latitude: 37.7986717,
+//     longitude: -122.4012891,
+//     categories: ['restaurants', 'food'],
+//     limit: 1
+//   })
+//   .then(response => {
+//     console.log(JSON.stringify(response.jsonBody.businesses))
+//   })
+//   .catch(e => {
+//     console.log(e);
+//   });
 
 const response_example = [{
   "id": "PTFxtXS47ZVRCdZIrEWvGw",

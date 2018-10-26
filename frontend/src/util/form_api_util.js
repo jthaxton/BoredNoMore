@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const getRestaurants = (cuisines) => (
-    axios.get('api/restaurants', cuisines)
-)
+// export const getRestaurants = (cuisines) => (
+//     axios.get('api/restaurants', cuisines)
+// )
 
 
 // export const fetchRestaurants = (cuisines) => {

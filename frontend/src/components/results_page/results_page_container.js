@@ -6,6 +6,8 @@ import resultPage from './results_page.jsx';
 
 import openModal from 'react-modal';
 
+import { getRestaurants } from '../../actions/form_actions.js';
+
 const mstp = (state) => { //likely the results we want to render back
     return {
         // currentUser: state.entities.users[state.session.currentUserId]
@@ -15,7 +17,8 @@ const mstp = (state) => { //likely the results we want to render back
 const mdtp = (dispatch) => { 
     return{
         logout: () => dispatch(logoutUser()),
-        openModal: () => dispatch(openModal())
+        openModal: () => dispatch(openModal()),
+        getRestaurants: (searchOptions) => dispatch(getRestaurants(searchOptions))
     }
 }
 

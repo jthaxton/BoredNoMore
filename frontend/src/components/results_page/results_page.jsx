@@ -44,6 +44,7 @@ export default class resultsPage extends Component {
    
 
   render() {
+    console.log(this.props)
     return <div>
         <div className="results-all">
           <div className="result-header">
@@ -90,7 +91,8 @@ export default class resultsPage extends Component {
             </aside> */}
 
             <ul className="results">
-              <li className="streamSelection">
+              <li className="streamSelection"
+                onClick={() => this.props.getRestaurants({location: "san francisco, ca", categories: ["chinese", "desserts"], limit: 5})}>
                 {/* onClick ={() => <Modal selection="stream"/>}> */}
                 {/* <div className="image-stand-in">stand-in for image</div> */}
                 <img src="https://images.unsplash.com/photo-1521967906867-14ec9d64bee8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63f399f203a46024cdee72cd6aa42163&auto=format&fit=crop&w=1350&q=80" />
