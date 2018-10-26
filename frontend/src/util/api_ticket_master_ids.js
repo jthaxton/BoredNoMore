@@ -1,15 +1,8 @@
+// segments > genre > subgenre
 module.exports = {
-  segment: {
-    'Miscellaneous': "",
-    'Sports': "KZFzniwnSyZfZ7v7KZFzniwnSyZfZ7v7n1nE",
-    'Music': "KZFzniwnSyZfZ7v7nJ",
-    'ArtsTheatre': "KZFzniwnSyZfZ7v7na",
-    'Undefined': "KZFzniwnSyZfZ7v7nl",
-    'Film': "KZFzniwnSyZfZ7v7nn"
-  },
-
-  genre: {
-    Miscellaneous: {
+  Miscellaneous: {
+    id: "KZFzniwnSyZfZ7v7n1",
+    genre: {
       'Casino/Gaming': "KnvZfZ7vAAa",
       'Comedy': "KnvZfZ7vAA1",
       'Community/Civic': "KnvZfZ7vAAE",
@@ -25,9 +18,12 @@ module.exports = {
       'Psychics/Mediums/Hypnotists': "KnvZfZ7vAAn",
       'Special Interest/Hobby': "KnvZfZ7v7lt",
       'Undefined': "KnvZfZ7v7ll",
-    },
+    }
+  },
 
-    Sports: {
+  Sports: {
+    id: "KZFzniwnSyZfZ7v7nE",
+    genre: {
       'Aquatics': "KnvZfZ7vAeI",
       'Athletic Races': "KnvZfZ7vAet",
       'Badminton': "KnvZfZ7vAen",
@@ -72,9 +68,12 @@ module.exports = {
       'Waterpolo': "KnvZfZ7vAAA",
       'Wrestling': "KnvZfZ7vAAk",
       'Field Hockey': "KnvZfZ7vAJv",
-    },
-    
-    Music: {
+    }
+  },
+
+  Music: {
+    id: "KZFzniwnSyZfZ7v7nJ",
+    genre: {
       'Alternative': "KnvZfZ7vAvv",
       'Ballads/Romantic': "KnvZfZ7vAve",
       'Blues': "KnvZfZ7vAvd",
@@ -98,9 +97,12 @@ module.exports = {
       'Rock': "KnvZfZ7vAeA",
       'Undefined': "KnvZfZ7vAe6",
       'World': "KnvZfZ7vAeF",
-    },
-    
-    ArtsTheatre: {
+    }
+  },
+
+  ArtsTheatre: {
+    id: "KZFzniwnSyZfZ7v7na",
+    genre: {
       "Children's Theatre": "KnvZfZ7v7na",
       'Circus & Specialty Acts': "KnvZfZ7v7n1",
       'Classical': "KnvZfZ7v7nJ",
@@ -121,13 +123,12 @@ module.exports = {
       'Spectacular': "KnvZfZ7v7la",
       'Theatre': "KnvZfZ7v7l1",
       'Variety': "KnvZfZ7v7lJ",
-    },
-    
-    Undefined: {
-      'Undefined': "KnvZfZ7vAkI",
-    },
-    
-    Film: {
+    }
+  },
+
+  Film: {
+    id: "KZFzniwnSyZfZ7v7nn",
+    genre: {
       'Action/Adventure': "KnvZfZ7vAke",
       'Animation': "KnvZfZ7vAkd",
       'Arthouse': "KnvZfZ7vAk7",
@@ -139,6 +140,13 @@ module.exports = {
       'Miscellaneous': "KnvZfZ7vAka",
       'Music': "KnvZfZ7vAkJ",
       'Urban': "KnvZfZ7vAkE",
+    }
+  },
+
+  Undefined: {
+    id: "KZFzniwnSyZfZ7v7nn",
+    genre: {
+      'Undefined': "KnvZfZ7vAkI",
     },
   }
 }
