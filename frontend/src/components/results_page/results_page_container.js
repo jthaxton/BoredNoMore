@@ -6,7 +6,7 @@ import resultPage from './results_page.jsx';
 
 const mstp = (state) => { //likely the results we want to render back
     return {
-        
+        // currentUser: state.entities.users[state.session.currentUserId]
     }
 }
 
