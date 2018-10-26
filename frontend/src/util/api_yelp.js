@@ -1,27 +1,12 @@
 const yelp = require('yelp-fusion');
-const apiKeyYelp = require("../../../config/keys").apiKeyYelp;
+const apiKeyYelp = require("./keys").apiKeyYelp;
 
 const client = yelp.client(apiKeyYelp);
 
 export const apiYelp = (searchOptions) => {
-  // searchOptions need categories and location
-
-  // 1. categories: [array]
-  // // categories: ['active']
-  // // categories: ['arts']
-  // // categories: ['beautysvc']
-  // // categories: ['localservices']
-  // // categories: ['skiresorts', 'tours']
-  // // categories: ['shopping']
-  // // categories: ['restaurants', 'food']
-  // // complete list: https://www.yelp.com/developers/documentation/v3/category_list
-
-  // 2. location: latitude, longitude or location
-  // // latitude: 37.7986717, longitude: -122.4012891
-  // // OR
-  // // location: 'san francisco, ca'
 
   const searchDefaults = {
+    dataType: "jsonp",
     offset: 0, // AKA next page
     price: [1, 2], // [1,2,3,4] $ $$ $$$ $$$$
     open_now: true, // OR open_at: 1540320750
@@ -39,11 +24,41 @@ export const apiYelp = (searchOptions) => {
 
 };
 
+
+// apiYelp({
+//     latitude: 37.7986717,
+//     longitude: -122.4012891,
+//     categories: ['restaurants', 'food'],
+//     limit: 1
+//   })
+//   .then(response => {
+//     console.log(JSON.stringify(response.jsonBody.businesses))
+//   })
+//   .catch(e => {
+//     console.log(e);
+//   });
+
+
+
+
 apiYelp({
+    // searchOptions need categories and (lat/long OR location)
+
+    // // complete list of category: https://www.yelp.com/developers/documentation/v3/category_list
+    // categories: ['active'],
+    // categories: ['arts'],
+    // categories: ['beautysvc'],
+    // categories: ['localservices'],
+    // categories: ['skiresorts', 'tours'],
+    // categories: ['shopping'],
+    categories: ['restaurants', 'food'],
+
     latitude: 37.7986717,
     longitude: -122.4012891,
-    categories: ['restaurants', 'food'],
-    limit: 1
+    // OR
+    // location: 'san francisco, ca',
+
+    // limit: 1
   })
   .then(response => {
     console.log(JSON.stringify(response.jsonBody.businesses))
@@ -51,6 +66,10 @@ apiYelp({
   .catch(e => {
     console.log(e);
   });
+
+
+
+
 
 const response_example = [{
   "id": "PTFxtXS47ZVRCdZIrEWvGw",

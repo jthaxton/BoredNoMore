@@ -11,6 +11,7 @@ import configureStore from "./store/store";
 // import registerServiceWorker from "./registerServiceWorker";
 
 document.addEventListener('DOMContentLoaded', () => {
+
     let store = configureStore();
     // Check for token
     if (localStorage.jwtToken) {
