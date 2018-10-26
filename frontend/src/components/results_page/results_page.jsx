@@ -1,14 +1,47 @@
 import React from 'react';
-
 import { Component } from 'react'
-
 import './result_page.css';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
+  }
+};
+
+Modal.setAppElement('#root');
 
 export default class resultsPage extends Component {
-    constructor(props){
-        super(props)
-    } 
-    // will be getting props for results
+  constructor(props){
+    super(props);
+      
+    this.state ={
+      modalIsOpen: false
+    };
+
+    this.openModal = this.openModal.bind(this);
+    // this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  } 
+   // will be getting props for results
+
+  openModal() {
+    this.setState({ modalIsOpen: true });
+  }
+
+  // afterOpenModal() {
+  //   this.subtitle.style.color = '#f00';
+  // }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
+  }
+   
 
   render() {
     return <div>
@@ -18,7 +51,23 @@ export default class resultsPage extends Component {
               {/* Welcome, {this.props.currentUser.name} */}
                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
               <p className="welcomeuser">
-                <i className="fas fa-user-alt" />
+                <i className="fas fa-user-alt"
+                  id="user-icon"
+                  onClick={this.openModal}> 
+                </i>
+
+                <Modal
+                  isOpen={this.state.modalIsOpen}
+                  onAfterOpen={this.afterOpenModal}
+                  onRequestClose={this.closeModal}
+                  style={customStyles}
+                >
+                  <button className="logout-button"
+                          onClick={this.closeModal}
+                  >Logout</button>
+
+                </Modal>
+
                 Welcome, User
               </p>
             </section>

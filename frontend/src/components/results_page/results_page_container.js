@@ -4,6 +4,8 @@ import { logoutUser } from '../../util/session_api_util'; //we will make this ev
 
 import resultPage from './results_page.jsx';
 
+import openModal from 'react-modal';
+
 const mstp = (state) => { //likely the results we want to render back
     return {
         // currentUser: state.entities.users[state.session.currentUserId]
@@ -12,7 +14,8 @@ const mstp = (state) => { //likely the results we want to render back
 
 const mdtp = (dispatch) => { 
     return{
-        logout: () => dispatch(logoutUser)
+        logout: () => dispatch(logoutUser()),
+        openModal: () => dispatch(openModal())
     }
 }
 
