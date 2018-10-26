@@ -4,16 +4,16 @@ import Modal from 'react-modal';
 import './splash.css';
 
 Modal.setAppElement('#root')
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
+// const customStyles = {
+//   content : {
+//     top                   : '50%',
+//     left                  : '50%',
+//     right                 : 'auto',
+//     bottom                : 'auto',
+//     // marginRight           : '-50%',
+//     transform             : 'translate(-50%, -50%)'
+//   }
+// };
 
 export default class SplashComponent extends React.Component {
     constructor(props){
@@ -83,7 +83,7 @@ openModal() {
             <div className="splash-content">
                 <h1>Need Recommendations?</h1>
                 <button className="quiz-button">
-                    Take Quiz
+                    TAKE QUIZ
                 </button>
 
             </div>
@@ -98,14 +98,22 @@ openModal() {
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
             
-              style={customStyles}
-            //   contentLabel="Example Modal"
+
                 >
                 <ul className="modal-list">
-                    <li className="test">HOME </li>
+                    <li>HOME </li>
                     <li>WHY US </li>
                     <li>LOGIN< /li>
                 </ul>
+                <ul className="modal-info">
+                    <li> IG </li>
+                    <li> TWITTER </li>
+                    <li> FB </li>
+                    <li> FAQS </li>
+                    <li> TERMS OF USE </li>
+                    <li> PRIVACY </li>
+                    <li> CONTACT </li>
+                    </ul>
             </Modal>
              
         </div>

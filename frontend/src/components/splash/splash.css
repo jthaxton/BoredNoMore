@@ -1,5 +1,5 @@
 .splash-page{
-  background-color: rgba(0,0,0,1);
+  background-color: rgba(20,20,20,1);
   position: relative;
   /* background-image: url('https://stmed.net/sites/default/files/restaurant-wallpapers-28840-4336902.jpg'); */
   /* background-image: url('http://26dmsk320msi1cz9hz4drgl5.wpengine.netdna-cdn.com/wp-content/uploads/2018/03/DC_NatTheat_MikeHume_1000x470.jpg'); */
@@ -7,6 +7,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 0;
+  outline: none;
 }
 
 .splash-page div{
@@ -50,6 +51,7 @@
   background: transparent;
   height: 50px;
   border: none;
+  /* outline: none; */
 }
 .splash-top-nav img {
   height: 35px;
@@ -57,16 +59,21 @@
 }
 button {
   cursor: pointer;
+    outline: none;
+
+  
 }
 
 .quiz-button{
   position: absolute;
   background-color: papayawhip;
   margin: auto;
+  font-size: 20px;
+  font-weight: 400;
   left: 70px;
   width: 225px;
   height: 50px;
-  border-radius: 25px;
+  border-radius: 0px;
   /* z-index: 3; */
 }
 
@@ -107,14 +114,21 @@ button {
 
 .modal{
   position: absolute;
-  background-color: rgba(10,10,10,1);
-  color: white;
-  top: 50%;
-  /* left: 5%; */
+  background-color: rgba(20,20,20,1);
+  color: papayawhip;
+  top: 0%;
+  left: 18%;
   width: 65%;
   height: 100%;
   right: auto;
   bottom: auto;
+  animation-name: modalFade;
+  animation-duration: .3s;
+  outline: none;
+}
+@keyframes modalFade {
+  from {transform: translateY(-50%);opacity: 0;}
+  to {transform: translateY(0%);opacity: 1;}
 }
   .Overlay {
     position: fixed;
@@ -138,5 +152,19 @@ button {
   font-size: 30px;
   font-weight: 700;
   line-height: 90px;
+}
+
+.modal-info {
+  display: flex;
+  position: absolute;
+  /* margin: auto; */
+  justify-content: space-evenly;
+  display: flex;
+  font-size: 14px;
+}
+.modal-info {
+  position: relative;
+  justify-content: safe;
+  margin: auto;
 }
 
