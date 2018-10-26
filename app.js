@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const users = require("./routes/api/users");
 const events = require("./routes/api/events");
 const register = require("./routes/api/register");
-const passport = require('passport');
-const path = require('path');
+const passport = require("passport");
+const path = require("path");
 require("./config/passport")(passport);
 
 const bodyParser = require("body-parser");
