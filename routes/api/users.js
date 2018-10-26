@@ -29,16 +29,16 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 // );
 
 router.patch("/preferences", passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    const { errors, isValid } = validateRegisterInput(req.body);
-    if (!isValid) {
-        return res.status(400).json(errors);
+    (req, res) => {
+        const { errors, isValid } = validateRegisterInput(req.body);
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+        res.json({
+            preferences: req.user.preferences,
+            pastChoices: req.user.pastChoices
+        });
     }
-    res.json({
-      preferences: req.user.preferences,
-      pastChoices: req.user.pastChoices
-    });
-  }
 );
 // info: req.user.info,
 
@@ -56,9 +56,9 @@ router.post("/register", (req, res) => {
         } else {
             const newUser = new User({
                 info: {
-                name: req.body.name,
-                email: req.body.email,
-                password: req.body.password
+                    name: req.body.name,
+                    email: req.body.email,
+                    password: req.body.password
                 }
             });
 
@@ -93,19 +93,19 @@ router.post("/login", (req, res) => {
     }
     const email = req.body.email;
     const password = req.body.password;
-    
-    
-    User.findOne({"info.email": email} ).then(user => {
-        
+
+
+    User.findOne({ "info.email": email }).then(user => {
+
         if (!user) {
             errors.email = "This user does not exist";
             return res.status(400).json(errors);
         }
-        
+
         console.log(user.info);
-        
+
         bcrypt.compare(password, user.info.password).then(isMatch => {
-            
+
             if (isMatch) {
                 const payload = { id: user.id, email: user.info.email, name: user.info.name };
 
