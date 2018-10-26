@@ -12,27 +12,15 @@ import resultsPageContainer from './components/results_page/results_page_contain
 // import formComponent from './components/preferences_form/form'; //just for testing
 
 
-const App = () => ( <
-  Switch >
-  <
-  Route exact path = "/"
-  component = {
-    splashComponent
-  }
-  /> <
-  Route exact path = "/signup"
-  component = {
-    signup_form_container
-  }
-  /> <
-  Route exact path = "/results"
-  component = {
-    resultsPageContainer
-  }
-  /> { /* <Route exact path="/form" component={formComponent} /> */ } { /* above just to test form. dont delete please! */ }
+const App = () => (
+    <Switch>
+      <Route exact path = "/" component={splashComponent} />
+      <Route exact path="/signup" component={signup_form_container} />
+      <Route exact path="/results" component={resultsPageContainer} />
+      {/* <Route exact path="/form" component={formComponent} /> */}
+      {/* above just to test form. dont delete please! */}
 
-  <
-  /Switch>
+    </Switch>
 );
 
 export default App;
