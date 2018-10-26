@@ -23,6 +23,23 @@ class Form extends Component {
         }
     }
 
+    saveEntries(entries){
+        this.setState(Object.assign({}, this.state, entries))
+    } 
+    //setState to Object that combines this.state and entries object with updated fields
+
+    nextStep(e){
+        this.setState({
+            step: this.state.step + 1
+        })
+    }
+
+    previousStep(e){
+        this.setState({
+            step: this.state.step - 1
+        })
+    }
+
   render() {
     switch (this.state.step) {
         case 1:
