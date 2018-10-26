@@ -9,7 +9,8 @@ import {
   Route
 } from 'react-router-dom'
 import resultsPageContainer from './components/results_page/results_page_container';
-import axios from 'axios';
+// import formComponent from './components/preferences_form/form'; //just for testing
+
 
 const App = () => ( <
   Switch >
@@ -28,13 +29,11 @@ const App = () => ( <
   component = {
     resultsPageContainer
   }
-  />
+  /> { /* <Route exact path="/form" component={formComponent} /> */ } { /* above just to test form. dont delete please! */ }
 
   <
   /Switch>
-
 );
-window.axios = axios;
 
 export default App;
 
