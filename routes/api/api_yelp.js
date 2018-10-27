@@ -28,7 +28,6 @@ const apiYelp = (searchOptions) => {
 };
 
 router.get('/', (req, res) => {
-
   apiYelp(req.query)
     .then(response => {
       return res.json(response.jsonBody.businesses);
@@ -37,7 +36,6 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
-
 
 
 

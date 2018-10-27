@@ -1,4 +1,3 @@
-// import * as FormUtil from '../actions/form_api_util';
 import { apiYelp } from '../util/api_yelp.js';
 
 export const FETCH_RESTAURANTS = "FETCH_RESTAURANTS";
@@ -7,21 +6,13 @@ export const FETCH_EVENTS = "FETCH_EVENTS";
 export const FETCH_MOVIES = "FETCH_MOVIES";
 
 
-export const getRestaurants = (searchOptions) => {
-    console.log(apiYelp);
-    return dispatch => {
-        return apiYelp(searchOptions).then((restaurants) => {
-            // return dispatch(receiveRestaurants(restaurants))
-            console.log(restaurants)
-        })
-    }
-}
-//searchOptions: location, cuisine, # of results
+export const getRestaurants = (searchOptions) => dispatch => (
+    apiYelp(searchOptions)
+        // .then((restaurants) => {console.log(restaurants.data)})
+        .then((restaurants) => dispatch(receiveRestaurants(restaurants.data)))
+)
 
-const receiveRestaurants = (restaurants) => {
-    return {
-        type: FETCH_RESTAURANTS,
-        restaurants
-    }
-}
-
+const receiveRestaurants = (restaurants) => ({
+    type: FETCH_RESTAURANTS,
+    payload: restaurants
+})
