@@ -97,23 +97,24 @@ openModal() {
             isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
-            
-
+        
                 >
-                <ul className="modal-list">
-                    <li>HOME </li>
-                    <li>WHY US </li>
-                    <li>LOGIN< /li>
-                </ul>
-                <ul className="modal-info">
-                    <li> IG </li>
-                    <li> TWITTER </li>
-                    <li> FB </li>
-                    <li> FAQS </li>
-                    <li> TERMS OF USE </li>
-                    <li> PRIVACY </li>
-                    <li> CONTACT </li>
+                <div className="modal-content">
+                    <ul className="modal-list">
+                        <li>HOME </li>
+                        <li>WHY US </li>
+                        <li>LOGIN< /li>
                     </ul>
+                    <ul className="modal-info">
+                        <li> IG </li>
+                        <li> TWITTER </li>
+                        <li> FB </li>
+                        <li> FAQS </li>
+                        <li> TERMS OF USE </li>
+                        <li> PRIVACY </li>
+                        <li> CONTACT </li>
+                    </ul>
+                </div>
             </Modal>
              
         </div>

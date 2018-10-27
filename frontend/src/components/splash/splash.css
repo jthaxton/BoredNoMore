@@ -8,6 +8,7 @@
   height: 100vh;
   z-index: 0;
   outline: none;
+  /* margin: 0; */
 }
 
 .splash-page div{
@@ -15,11 +16,7 @@
   z-index: 3;
 }
 
-/* .splash-page button{
-  position: absolute;
-  background-color: red;
-  z-index: 5;
-} */
+
 .splash-top-nav {
   display: flex;
   color: papayawhip;
@@ -87,6 +84,7 @@ button {
   top: 0;
   bottom: 0;
   z-index: 1;
+  margin: 0px;
 
 	animation-name: fade;
   animation-timing-function: ease;
@@ -141,9 +139,11 @@ button {
 }
 
 .modal-list{
+  position:relative;
   /* display: flex; */
   list-style: none;
   /* margin: auto; */
+  /* top:25px; */
 }
 .modal-list li{
   position: relative;
@@ -153,19 +153,27 @@ button {
   font-size: 30px;
   font-weight: 700;
   line-height: 90px;
+  /* top: 50px; */
+
 }
 
 .modal-info {
   display: flex;
-  position: absolute;
+  /* position: absolute; */
   /* margin: auto; */
   justify-content: space-evenly;
   display: flex;
+  /* bottom: 50px; */
   font-size: 14px;
 }
 .modal-info {
-  position: relative;
+  /* position: relative; */
   justify-content: safe;
   margin: auto;
 }
-
+/* 
+.modal-content{
+  position: absolute;
+  top:100px;
+  color: red;
+} */
