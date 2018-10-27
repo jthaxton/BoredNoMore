@@ -32,8 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-const root = document.getElementById('root');    
-ReactDOM.render(<Root store = {store}/>, root);
+    window.getState = store.getState;
+
+    const root = document.getElementById('root');    
+    ReactDOM.render(<Root store = {store}/>, root);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
