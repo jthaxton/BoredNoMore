@@ -29,9 +29,9 @@ export default class SplashComponent extends React.Component {
         ] 
         }
         this.changeImage = this.changeImage.bind(this)
-            this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.afterOpenModal = this.afterOpenModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     } 
 
     changeImage() {
@@ -52,17 +52,17 @@ export default class SplashComponent extends React.Component {
 
     }
 
-openModal() {
-    this.setState({modalIsOpen: true});
+    openModal() {
+        this.setState({modalIsOpen: true});
     }
 
-  afterOpenModal() {
+    afterOpenModal() {
     // references are now sync'd and can be accessed.
     // this.subtitle.style.color = '#f00';
 }
 
-  closeModal() {
-    this.setState({modalIsOpen: false});
+    closeModal() {
+        this.setState({modalIsOpen: false});
   }
   
 
@@ -70,6 +70,14 @@ openModal() {
 
 
     render(){
+        // let component;
+        // switch(modalClassName){
+        //     case 'modal':
+        //     break;
+        //     case 'modal-form':
+        //     break;
+        // }
+
         return(
         <div className="splash-page">
             <div className="splash-top-nav">
@@ -82,7 +90,8 @@ openModal() {
             </div>
             <div className="splash-content">
                 <h1>Need Recommendations?</h1>
-                <button className="quiz-button">
+                <button className="quiz-button"
+                        onClick={this.openModal}>
                     TAKE QUIZ
                 </button>
 
