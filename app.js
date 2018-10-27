@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const users = require("./routes/api/users");
 const events = require("./routes/api/events");
 const register = require("./routes/api/register");
+const apiYelp = require("./routes/api/api_yelp");
 const passport = require('passport');
 const path = require('path');
 require("./config/passport")(passport);
@@ -25,6 +26,7 @@ app.use(passport.initialize());
 app.use("/api/users", users);
 app.use("/api/events", events);
 app.use("/api/register", register);
+app.use("/api/api_yelp", apiYelp);
 
 app.use(bodyParser.json());
 const db = require("./config/keys").mongoURI;

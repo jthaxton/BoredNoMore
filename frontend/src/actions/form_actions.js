@@ -8,6 +8,7 @@ export const FETCH_MOVIES = "FETCH_MOVIES";
 
 
 export const getRestaurants = (searchOptions) => {
+    console.log(apiYelp);
     return dispatch => {
         return apiYelp(searchOptions).then((restaurants) => {
             // return dispatch(receiveRestaurants(restaurants))
