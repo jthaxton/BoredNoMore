@@ -47,6 +47,8 @@
     align-items: center;
     flex-direction: row;
     width: 425px;
+    position: relative;
+    top: 30%;
 }
 #whyUs-splash-text img{
     height: 250px;
