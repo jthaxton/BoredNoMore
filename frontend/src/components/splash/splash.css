@@ -1,22 +1,35 @@
 .splash-page{
-  background-color: rgba(0,0,0,1);
+  background-color: rgba(20,20,20,1);
   position: relative;
   /* background-image: url('https://stmed.net/sites/default/files/restaurant-wallpapers-28840-4336902.jpg'); */
   /* background-image: url('http://26dmsk320msi1cz9hz4drgl5.wpengine.netdna-cdn.com/wp-content/uploads/2018/03/DC_NatTheat_MikeHume_1000x470.jpg'); */
   background-size: 100%;
   width: 100vw;
   height: 100vh;
-  z-index: -3;
-
-
+  z-index: 0;
+  outline: none;
 }
+
+.splash-page div{
+  position: absolute;
+  z-index: 3;
+}
+
+/* .splash-page button{
+  position: absolute;
+  background-color: red;
+  z-index: 5;
+} */
 .splash-top-nav {
   display: flex;
   color: papayawhip;
+  z-index: 3;
 }
 .splash-top-nav h3{
+  position: absolute;
   margin: auto;
   font-size: 35px;
+  left: 43vw;
 }
 .splash-content {
   /* background-color: red; */
@@ -38,6 +51,7 @@
   background: transparent;
   height: 50px;
   border: none;
+  /* outline: none; */
 }
 .splash-top-nav img {
   height: 35px;
@@ -45,16 +59,22 @@
 }
 button {
   cursor: pointer;
+    outline: none;
+
+  
 }
 
 .quiz-button{
   position: absolute;
   background-color: papayawhip;
   margin: auto;
+  font-size: 20px;
+  font-weight: 400;
   left: 70px;
   width: 225px;
   height: 50px;
-  border-radius: 25px;
+  border-radius: 0px;
+  /* z-index: 3; */
 }
 
 .splash-background-image {
@@ -66,29 +86,86 @@ button {
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: -2;
+  z-index: 1;
 
 	animation-name: fade;
-	/* animation-timing-function: ease-in-out; */
   animation-timing-function: ease;
 	animation-iteration-count: infinite;
-	animation-duration: 5s;
+	animation-duration: 8s;
 }
 
 @keyframes fade {
 	0% {
 		opacity: .125;
 	}
-  /* 10% {
-    opacity: .5;
+  /* 25% {
+    opacity: 1;
   } */
 	50% {
 		opacity: 1;
 	}
-	/* 90% {
-		opacity: .5;
-	} */
+	75% {
+		opacity: 1;
+	}
 	100% {
 		opacity: .125;
 	}
 }
+
+.modal{
+  position: absolute;
+  background-color: rgba(20,20,20,1);
+  color: papayawhip;
+  top: 0%;
+  left: 18%;
+  width: 65%;
+  height: 100%;
+  right: auto;
+  bottom: auto;
+  animation-name: modalFade;
+  animation-duration: .3s;
+  outline: none;
+}
+@keyframes modalFade {
+  from {transform: translateY(-50%);opacity: 0;}
+  to {transform: translateY(0%);opacity: 1;}
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000096;
+}
+
+.modal-list{
+  /* display: flex; */
+  list-style: none;
+  /* margin: auto; */
+}
+.modal-list li{
+  position: relative;
+  margin: auto;
+  /* background-color: blue; */
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 90px;
+}
+
+.modal-info {
+  display: flex;
+  position: absolute;
+  /* margin: auto; */
+  justify-content: space-evenly;
+  display: flex;
+  font-size: 14px;
+}
+.modal-info {
+  position: relative;
+  justify-content: safe;
+  margin: auto;
+}
+
