@@ -6,7 +6,10 @@ import resultPage from './results_page.jsx';
 
 import openModal from 'react-modal';
 
-import { getRestaurants } from '../../actions/form_actions.js';
+import {
+    getRestaurants,
+    getEvents
+} from '../../actions/form_actions.js';
 
 const mstp = (state) => { //likely the results we want to render back
     return {
@@ -18,7 +21,8 @@ const mdtp = (dispatch) => {
     return{
         logout: () => dispatch(logoutUser()),
         openModal: () => dispatch(openModal()),
-        getRestaurants: (searchOptions) => dispatch(getRestaurants(searchOptions))
+        getRestaurants: (searchOptions) => dispatch(getRestaurants(searchOptions)),
+        getEvents: (searchOptions) => dispatch(getEvents(searchOptions))
     }
 }
 
