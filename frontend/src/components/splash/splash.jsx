@@ -32,6 +32,7 @@ export default class SplashComponent extends React.Component {
             this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleGoWhyUs = this.handleGoWhyUs.bind(this)
     } 
 
     changeImage() {
@@ -66,7 +67,10 @@ openModal() {
   }
   
 
-
+  handleGoWhyUs(e, AlbumID){
+    e.preventDefault();
+    this.props.history.push(`/whyUs`);
+  }
 
 
     render(){
@@ -97,23 +101,28 @@ openModal() {
             isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
-            
-
+        
                 >
-                <ul className="modal-list">
-                    <li>HOME </li>
-                    <li>WHY US </li>
-                    <li>LOGIN< /li>
-                </ul>
-                <ul className="modal-info">
-                    <li> IG </li>
-                    <li> TWITTER </li>
-                    <li> FB </li>
-                    <li> FAQS </li>
-                    <li> TERMS OF USE </li>
-                    <li> PRIVACY </li>
-                    <li> CONTACT </li>
+                <div className="modal-content">
+                    <ul className="modal-list">
+                        <li>HOME </li>
+                        <li>
+                            <button onClick={this.handleGoWhyUs}>
+                            WHY US 
+                            </button>
+                        </li>
+                        <li>LOGIN< /li>
                     </ul>
+                    <ul className="modal-info">
+                        <li> IG </li>
+                        <li> TWITTER </li>
+                        <li> FB </li>
+                        <li> FAQS </li>
+                        <li> TERMS OF USE </li>
+                        <li> PRIVACY </li>
+                        <li> CONTACT </li>
+                    </ul>
+                </div>
             </Modal>
              
         </div>
