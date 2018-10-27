@@ -13,17 +13,27 @@
 }
 
 .whyUs-list {
-    /* text-align: center; */
     display: flex;
     color: black;
-    /* align-items: center; */
-    /* position: absolute; */
     display: block;
-    /* position: absolute; */
     margin: auto;
-    /* height: 600px; */
     width: 100%;
-    top: 100%;
+    /* top: 100%; */
+}
+
+.whyUs-content img{
+    height: 100px;
+}
+.whyUs-list-text {
+    display:flex;
+    flex-direction: column;
+}
+
+.whyUs ul{
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    line-spacing: 0px;
 }
 
 .whyUs li{
@@ -31,26 +41,34 @@
     width: 100%;
 }
 
+#whyUs-start{
+    height: 100vh;
+}
+
 .whyUs-content{
     display: flex;
     height: 400px;
+    align-items: center;
+    align-text: center;
+    justify-content: space-evenly;
 }
 
 .whyUs-list p {
-    width: 500px
+    width: 500px;
+    text-align: center;
 }
 
 
 .whyUs-idx-1 {
     background-color: blue;
     display: flex;
-    height: 300px;
+    /* min-height: 0px; */
         /* overflow: scroll; */
 }
 
 .whyUs-idx-2{
     background-color: papayawhip;
-    height: 300px;
+    /* height: 300px; */
 }
 
 .whyUs-idx-3 {
