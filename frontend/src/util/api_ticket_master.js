@@ -2,14 +2,14 @@
 
 const axios = require('axios');
 const Geohash = require('latlon-geohash');
-const apiKeyTicketMaster = require("../../../config/keys").apiKeyTicketMaster;
+const apiKeyTicketMaster = require("./keys").apiKeyTicketMaster;
 
 const ticketMasterIds = require("./api_ticket_master_ids.js")
 
-export const fetchTicketMaster = (options) => {
+export const apiTicketMaster = (searchOptions) => {
 
   // Default query parameters
-  const defaults = {
+  const searchDefaults = {
     latitude: 37.7986717, // San Francisco, CA
     longitude: -122.4012891, // San Francisco, CA
     radius: 100, // radius in miles
@@ -21,7 +21,7 @@ export const fetchTicketMaster = (options) => {
   };
 
   // Final query params
-  const queryParams = Object.assign(defaults, options);
+  const queryParams = Object.assign(searchDefaults, searchOptions);
 
   // Generate DateTime based on date options input
   const currentDate = new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
@@ -55,16 +55,16 @@ export const fetchTicketMaster = (options) => {
   })
 }
 
-fetchTicketMaster({
-    latitude: 42.35984802,
-    longitude: -71.05888367,
+// apiTicketMaster({
+//     latitude: 42.35984802,
+//     longitude: -71.05888367,
 
-    // segmentId: ticketMasterIds.Miscellaneous.id,
-    // segmentId: ticketMasterIds.Sports.id,
-    // segmentId: ticketMasterIds.Music.id,
-    // segmentId: ticketMasterIds.ArtsTheatre.id,
-    // segmentId: ticketMasterIds.Film.id,
-  })
-  .then((res) => {
-    console.log(res.data._embedded.events) // Array of events
-  })
+//     // segmentId: ticketMasterIds.Miscellaneous.id,
+//     // segmentId: ticketMasterIds.Sports.id,
+//     // segmentId: ticketMasterIds.Music.id,
+//     // segmentId: ticketMasterIds.ArtsTheatre.id,
+//     // segmentId: ticketMasterIds.Film.id,
+//   })
+//   .then((res) => {
+//     console.log(res.data._embedded.events) // Array of events
+//   })
