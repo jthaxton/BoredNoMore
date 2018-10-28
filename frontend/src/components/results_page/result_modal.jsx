@@ -4,14 +4,14 @@ import "./result_modal.css";
 export default function ResultModal({data}) {
   return (
     <div className='result-modal'>
-      <a href='https://www.google.com'>
+      <a href={data.url} target="_blank">
         <img 
           src={data.image_url}
           alt='result'
         />
       </a>
 
-      <a href='/'>
+      <a href={data.url} target="_blank">
         {data.name}
       </a>
 

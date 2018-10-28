@@ -1,14 +1,14 @@
 import {
-  FETCH_EVENTS
+  FETCH_ACTIVITIES
 } from '../../actions/result_actions';
 
-const eventsReducer = (state = {}, action) => {
+const activitiesReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
-    
+
   switch (action.type) {
 
-    case FETCH_EVENTS:
+    case FETCH_ACTIVITIES:
       return action.payload;
 
     default:
@@ -16,4 +16,4 @@ const eventsReducer = (state = {}, action) => {
   }
 };
 
-export default eventsReducer;
+export default activitiesReducer;

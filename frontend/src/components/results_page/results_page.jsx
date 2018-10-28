@@ -61,6 +61,12 @@ export default class resultsPage extends Component {
       }
     )
 
+    this.props.getActivities({
+      latitude: this.state.coords.latitude,
+      longitude: this.state.coords.longitude,
+      categories: this.props.currentUser.preferences.activityType
+    });
+
     this.props.getEvents(
       {
         latitude: this.state.coords.latitude,
@@ -83,7 +89,6 @@ export default class resultsPage extends Component {
     console.log(this.state);
     console.log(this.props);
     
-
       const logoutModal = (
         <button className="logout-button"
           onClick={this.closeModal}
@@ -101,13 +106,13 @@ export default class resultsPage extends Component {
 
         <div className="result-header">
           <section className="user-greeting">
-            {/* <p>
+            <p>
               <i className="fas fa-user-alt"
                 id="user-icon"
                 onClick={() => this.setState({ modalComponent: logoutModal, modalIsOpen: true })}> 
               </i>
               Welcome, {this.props.currentUser.name}
-            </p> */}
+            </p>
           </section>
 
           <div className="borednomore-logo">BoredNoMore</div>
@@ -115,19 +120,30 @@ export default class resultsPage extends Component {
 
         <div className="result-body">
           <ul className="results-body-index">
-            <li className="activitySelection">
+            <li className="activitySelection"
+              onClick={() => this.setState(
+                {
+                  modalComponent: (
+                    <ResultModal data={this.props.selectActivity} />
+                  ),
+                  modalIsOpen: true
+                }
+              )}
+            >
               <img src="https://images.unsplash.com/photo-1521967906867-14ec9d64bee8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63f399f203a46024cdee72cd6aa42163&auto=format&fit=crop&w=1350&q=80" />
               <p>Activity</p>
             </li>
 
-            <li className="restaurantSelection" onClick={() => this.setState(
-                  {
-                    modalComponent: (
-                      <ResultModal data={this.props.selectRestaurant} />
-                    ),
-                    modalIsOpen: true
-                  }
-                )}>
+            <li className="restaurantSelection" 
+              onClick={() => this.setState(
+                {
+                  modalComponent: (
+                    <ResultModal data={this.props.selectRestaurant} />
+                  ),
+                  modalIsOpen: true
+                }
+              )}
+            >
               <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7fc4917011de5709727efa4b8497bad&auto=format&fit=crop&w=1351&q=80" />
               <p>Food</p>
             </li>
@@ -137,12 +153,16 @@ export default class resultsPage extends Component {
               <p>Movie</p>
             </li>
 
-            <li className="eventSelection" onClick={() => this.setState({
+            <li className="eventSelection" 
+              onClick={() => this.setState(
+                {
                   modalComponent: (
                     <ResultModal data={this.props.selectEvent} />
                   ),
                   modalIsOpen: true
-                })}>
+                }
+              )}
+            >
               <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a413a0b054159dd7840130c25e6dbdf&auto=format&fit=crop&w=1350&q=80" />
               <p>Event</p>
             </li>
