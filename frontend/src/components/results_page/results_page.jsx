@@ -24,7 +24,10 @@ export default class resultsPage extends Component {
       
     this.state ={
       modalIsOpen: false,
-      // coords: ''
+      coords: {
+        latitude: 42.35984802,
+        longitude: -71.05888367
+      }
     };
 
     this.openModal = this.openModal.bind(this);
@@ -120,8 +123,8 @@ export default class resultsPage extends Component {
             <li className="restaurantSelection"
               onClick={() => this.props.getRestaurants(
                 {
-                  latitude: this.state.coords.latitude, 
-                  longitude: this.state.coords.longitude, 
+                  latitude: this.state.coords.latitude,
+                  longitude: this.state.coords.longitude,  
 
                   categories: ["chinese", "desserts"], 
                 }
@@ -144,7 +147,7 @@ export default class resultsPage extends Component {
               onClick={() => this.props.getEvents(
                 {
                   latitude: this.state.coords.latitude,
-                  longitude: this.state.coords.longitude, 
+                  longitude: this.state.coords.longitude,  
 
                   // segmentId: ticketMasterIds.Miscellaneous.id,
                   // segmentId: ticketMasterIds.Sports.id,
