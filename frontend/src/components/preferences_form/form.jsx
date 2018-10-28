@@ -37,10 +37,10 @@ class Form extends Component {
     //setState to Object that combines this.state and entries object with updated fields
 
     nextStep(e){
-        console.log(this.state);
         this.setState({
             step: this.state.step + 1
-        }, () => console.log(this.state));
+        });
+        console.log(this.state)
     }
 
     previousStep(e){
@@ -54,37 +54,41 @@ class Form extends Component {
         case 1:
             return <Form1 
                         name={this.state.name}
-                        step={this.state.step}
                         nextStep={this.nextStep}
                         saveEntries={this.saveEntries} />
         case 2:
-            console.log('RENDER 2');
             return <Form15 
+                        name={this.state.name}
                         location={this.state.location}
                         nextStep={this.nextStep}
                         saveEntries={this.saveEntries} />
         case 3: 
             return <Form2 
+                        name={this.state.name}
                         genres={this.state.genres}
                         nextStep={this.nextStep}
                         saveEntries={this.saveEntries} />
         case 4: 
             return <Form3 
+                        name={this.state.name}
                         cuisines={this.state.cuisines}
                         nextStep={this.nextStep}
                         saveEntries={this.saveEntries} />
         case 5:
             return <Form4 
+                        name={this.state.name}
                         eventTypes={this.state.eventTypes}
                         nextStep={this.nextStep}
                         saveEntries={this.saveEntries} />
         case 6:
             return <Form5 
+                        name={this.state.name}
                         subs={this.state.subs}
                         nextStep={this.nextStep}
                         saveEntries={this.saveEntries} />
         case 7:
             return <Form6
+                        name={this.state.name}
                         email={this.state.email}
                         password={this.state.password}
                         saveEntries={this.saveEntries} />
