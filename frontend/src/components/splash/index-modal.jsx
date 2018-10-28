@@ -21,4 +21,3 @@ export default function IndexModal() {
   )
 }
 
-// export default IndexModal;  

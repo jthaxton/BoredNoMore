@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import form2WatchPref from './form2_watchpref_container';
+import Form2 from './form2_watchpref';
 
 const mstp = (state) => {
     return {
@@ -10,4 +10,4 @@ const mstp = (state) => {
 }
 
 
-export default connect(mstp, null)(form2WatchPref);
+export default connect(mstp, null)(Form2);

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Form from '../preferences_form/form';
 
 export default function FormModal() {
   return (
     <div>
-      <h1>placeholder for form component</h1>
+      <Form />
     </div>
   )
 }
 
-// export default FormModal;
