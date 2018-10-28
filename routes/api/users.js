@@ -11,36 +11,33 @@ const User = require('../../models/User');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
-router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+router
+    .get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
         user: req.user
     });
 });
-// id: req.user.id,
-// email: req.user.email,
-// preferences: req.user.preferences
 
-// router.update("/current-update",passport.authenticate("jwt", { session: false }),
-//   (req, res) => {
-//     res.json({
-//       user: req.user
-//     });
-//   }
-// );
+router.get("/preferences", passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        const user = User.findOne({"_id": req.user.id});
+        res.json(req.user);
+    });
 
 router.patch("/preferences", passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    const { errors, isValid } = validateRegisterInput(req.body);
-    if (!isValid) {
-        return res.status(400).json(errors);
-    }
-    res.json({
-      preferences: req.user.preferences,
-      pastChoices: req.user.pastChoices
-    });
-  }
-);
-// info: req.user.info,
+    (req, res) => {
+        User.findByIdAndUpdate(req.user.id, {
+          "preferences.cuisine": req.body.cuisine,
+          "preferences.movieGenre": req.body.movieGenre,
+          "preferences.streamGenre": req.body.streamGenre,
+          "preferences.liveEventType": req.body.liveEventType,
+          "preferences.zip": req.body.zip
+        }).then(user => {
+                  res.json({
+                    user: req.user
+                });
+            });
+         });
 
 router.post("/register", (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
