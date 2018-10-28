@@ -164,7 +164,6 @@ export default class resultsPage extends Component {
 
               </li>
             </ul>
-          </aside> */}
 
           <ul className="results-body-index">
             <li className="streamSelection">

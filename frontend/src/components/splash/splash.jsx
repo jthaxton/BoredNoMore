@@ -28,7 +28,7 @@ export default class SplashComponent extends React.Component {
         this.setState = this.setState.bind(this);
         this.openIndexModal = this.openIndexModal.bind(this);
         this.handleGoWhyUs = this.handleGoWhyUs.bind(this)
-          this.afterOpenModal = this.afterOpenModal.bind(this);
+        //   this.afterOpenModal = this.afterOpenModal.bind(this);
     } 
 
     changeImage() {
