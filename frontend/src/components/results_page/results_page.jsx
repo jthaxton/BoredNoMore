@@ -23,12 +23,17 @@ export default class resultsPage extends Component {
     super(props);
       
     this.state ={
-      modalIsOpen: false
+      modalIsOpen: false,
+      coords: {
+        latitude: 42.35984802,
+        longitude: -71.05888367
+      }
     };
 
     this.openModal = this.openModal.bind(this);
     // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.setState = this.setState.bind(this);
   } 
    // will be getting props for results
 
@@ -43,10 +48,19 @@ export default class resultsPage extends Component {
   closeModal() {
     this.setState({ modalIsOpen: false });
   }
-   
 
+  componentDidMount() {
+    const success = (pos) => (
+      this.setState({coords: pos.coords})
+    )
+
+    navigator.geolocation.getCurrentPosition(success);
+  }
+  
+  
   render() {
-
+    console.log(this.state)
+    
     return(
       <div className="results-all">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossOrigin="anonymous"/>
@@ -108,10 +122,10 @@ export default class resultsPage extends Component {
             <li className="restaurantSelection"
               onClick={() => this.props.getRestaurants(
                 {
-                  latitude: 42.35984802, 
-                  longitude: -71.05888367, 
+                  latitude: this.state.coords.latitude,
+                  longitude: this.state.coords.longitude,  
+
                   categories: ["chinese", "desserts"], 
-                  limit: 5
                 }
               )}
             >
@@ -131,8 +145,9 @@ export default class resultsPage extends Component {
             <li className="eventSelection"
               onClick={() => this.props.getEvents(
                 {
-                  latitude: 42.35984802,
-                  longitude: -71.05888367,
+                  latitude: this.state.coords.latitude,
+                  longitude: this.state.coords.longitude,  
+
                   // segmentId: ticketMasterIds.Miscellaneous.id,
                   // segmentId: ticketMasterIds.Sports.id,
                   // segmentId: ticketMasterIds.Music.id,
