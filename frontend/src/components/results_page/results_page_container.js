@@ -20,6 +20,7 @@ import {
 const ticketMasterIds = require('../../util/api_ticket_master_ids');
 
 
+
 const mstp = (state) => { //likely the results we want to render back
     const restaurantsArray = state.api_results.restaurants;
     const activitiesArray = state.api_results.activities;

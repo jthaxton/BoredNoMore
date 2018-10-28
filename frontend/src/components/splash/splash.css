@@ -168,7 +168,10 @@ button {
   margin: auto;
 }
 
-
+.form-modal {
+  height: 70%;
+  width: 70%;
+}
 .modal-list button {
   background: transparent;
   color: papayawhip;

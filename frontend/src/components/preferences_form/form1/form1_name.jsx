@@ -9,6 +9,7 @@ export default class form1_Name extends Component {
             name: "Me"
         }
     }
+    
 
     changeName(e){
         return e => {
@@ -16,18 +17,25 @@ export default class form1_Name extends Component {
         }
     }
 
+    nextStep(){
+        this.props.nextStep()
+    }
+
   render() {
     return (
       <div>
+        <h1>BoredNoMore</h1>
+        <h4>For </h4>
         <form>
-            <h1>BoredNoMore</h1>
-            <h4>For </h4>
             <h1>First, what should we call you?</h1>
             <input 
-                value="{this.state.name}"
+                // value="{this.state.name}"
                 onChange={() => this.changeName().bind(this)} >
             </input>
         </form >
+        <button 
+            className="next-step"
+            onClick={this.nextStep}>Next</button>
       </div>
     )
   }

@@ -123,7 +123,9 @@ export default class resultsPage extends Component {
           <div className="borednomore-logo">BoredNoMore</div>
         </div>
 
+
         <div className="result-body">
+
           <ul className="results-body-index">
             <ResultItem 
               caption="Activity" 
