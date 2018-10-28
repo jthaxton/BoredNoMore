@@ -11,9 +11,39 @@ import {
     getEvents
 } from '../../actions/form_actions.js';
 
+import {
+    selectRestaurant, 
+    selectEvent
+} from './result_selector';
+
+const ticketMasterIds = require('../../util/api_ticket_master_ids');
+
+
 const mstp = (state) => { //likely the results we want to render back
+    const restaurantsArray = state.api_results.restaurants;
+    const eventsArray = state.api_results.events;
+
     return {
         // currentUser: state.entities.users[state.session.currentUserId]
+        currentUser: {
+            name: 'Tony',
+            preferences: {
+                cuisine: ['korean'],
+                movieGenre: [],
+                streamGenre: [],
+                liveEventType: ticketMasterIds['Miscellaneous'].id,
+                // liveEventType: ticketMasterIds['Sports'].id,
+                // liveEventType: ticketMasterIds['Music'].id,
+                // liveEventType: ticketMasterIds['ArtsTheatre'].id,
+                // liveEventType: ticketMasterIds['Film'].id,
+                // activityType: ['active']
+            }
+        },
+
+        selectRestaurant: selectRestaurant(restaurantsArray) || undefined,
+        // selectRestaurant: restaurantsArray[Math.floor(Math.random() * restaurantsArray.length)],
+        selectEvent: selectEvent(eventsArray),
+        // selectEvents: eventsArray[Math.floor(Math.random() * eventsArray.length)]
     }
 }
 

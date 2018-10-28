@@ -10,10 +10,6 @@ export const apiTicketMaster = (searchOptions) => {
 
   // Default query parameters
   const searchDefaults = {
-    // latitude: 42.35984802, // Boston, MA
-    // longitude: -71.05888367, // Boston, MA
-    // latitude: 37.7986717, // San Francisco, CA
-    // longitude: -122.4012891, // San Francisco, CA
     radius: 100, // radius in miles
 
     includeFamily: 'no', // family-friendly?
