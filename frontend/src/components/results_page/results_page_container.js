@@ -11,6 +11,7 @@ import {
     getEvents
 } from '../../actions/form_actions.js';
 
+
 const mstp = (state) => { //likely the results we want to render back
     return {
         // currentUser: state.entities.users[state.session.currentUserId]

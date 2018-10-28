@@ -69,6 +69,24 @@ li {
     justify-content: center;
 }
 
+.results div {
+    height: 270px;
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.result-img{
+    height: 270px;
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.results li {
+
 .results-body-index li {
     width: 35%;
     border: 1px solid black;
