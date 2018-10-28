@@ -2,8 +2,8 @@ import React from 'react';
 import { Component } from 'react'
 import Modal from 'react-modal';
 import './result_page.css';
-
-const ticketMasterIds = require('../../util/api_ticket_master_ids');
+import ResultItem from './result_item'
+import ResultModal from './result_modal'
 
 const customStyles = {
   content: {
@@ -24,21 +24,31 @@ export default class resultsPage extends Component {
       
     this.state ={
       modalIsOpen: false,
+      // modalComponent: <ResultModal />,
       coords: {
         latitude: 42.35984802,
         longitude: -71.05888367
       }
     };
 
-    this.openModal = this.openModal.bind(this);
+    // this.openModal = this.openModal.bind(this);
     // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.setState = this.setState.bind(this);
+    this.openResultModal = this.openResultModal.bind(this);
   } 
    // will be getting props for results
 
-  openModal() {
-    this.setState({ modalIsOpen: true });
+  // openModal() {
+  //   this.setState({ modalIsOpen: true });
+  // }
+  openResultModal(data) {
+    console.log('openResultModal ran');
+    
+    this.setState({
+      modalIsOpen: true, 
+      modalComponent: (
+        <ResultModal data={data} />
+      ) });
   }
 
   // afterOpenModal() {
@@ -49,178 +59,99 @@ export default class resultsPage extends Component {
     this.setState({ modalIsOpen: false });
   }
 
-  componentDidMount() {
-    const success = (pos) => (
-      this.setState({coords: pos.coords})
+  fetchData(pos) {
+    this.setState({ coords: pos.coords })
+
+    this.props.getRestaurants(
+      {
+        latitude: this.state.coords.latitude,
+        longitude: this.state.coords.longitude,
+        categories: this.props.currentUser.preferences.cuisine,
+      }
     )
 
-    navigator.geolocation.getCurrentPosition(success);
+    this.props.getActivities({
+      latitude: this.state.coords.latitude,
+      longitude: this.state.coords.longitude,
+      categories: this.props.currentUser.preferences.activityType
+    });
+
+    this.props.getEvents(
+      {
+        latitude: this.state.coords.latitude,
+        longitude: this.state.coords.longitude,
+        segmentId: this.props.currentUser.preferences.liveEventType
+      }
+    )
+  }
+
+  componentDidMount() {
+    console.log('Getting location...');    
+    navigator.geolocation.getCurrentPosition(
+      (pos) => this.fetchData(pos),
+      () => alert('Could not locate, please allow location')
+    );
   }
   
   
   render() {
-    console.log(this.state)
-    
-    return(
-      <div className="results-all">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossOrigin="anonymous"/>
+    const logoutModal = (
+      <button className="logout-button"
+        onClick={this.closeModal}
+      >
+        Logout
+      </button>
+    );
 
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-        >
-          <button className="logout-button"
-            onClick={this.closeModal}
-          >
-            Logout
-          </button>
+    return <div className="results-all">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossOrigin="anonymous" />
+
+        <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.afterOpenModal} onRequestClose={this.closeModal} style={customStyles}>
+          {this.state.modalComponent}
         </Modal>
 
         <div className="result-header">
           <section className="user-greeting">
             <p>
-              <i className="fas fa-user-alt"
-                id="user-icon"
-                onClick={this.openModal}> 
-              </i>
-              Welcome, User
-              {/* Welcome, {this.props.currentUser.name} */}
+              <i className="fas fa-user-alt" id="user-icon" onClick={() => this.setState(
+                    { modalComponent: logoutModal, modalIsOpen: true }
+                  )} />
+              Welcome, {this.props.currentUser.name}
             </p>
           </section>
-          
-          <div className="borednomore-logo">
-            BoredNoMore
-          </div>
+
+          <div className="borednomore-logo">BoredNoMore</div>
         </div>
 
-          <div className="result-main-body">
-            {/* <aside className="side-navbar">
-              <ul>
-                <li>My Profile</li>
-                <li />
-                <li />
-                <li />
-                <li>
-                  <button className="result-page-logout" onClick={() => this.props.logout()}>
-                    Logout
-                  </button>
-                </li>
-              </ul>
-            </aside> */}
 
-            <ul className="results">
-              <li className="streamSelection">
-                {/* onClick ={() => <Modal selection="stream"/>}> */}
-                {/* <div className="image-stand-in">stand-in for image</div> */}
-               <img className="result-img" src="https://images.unsplash.com/photo-1521967906867-14ec9d64bee8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63f399f203a46024cdee72cd6aa42163&auto=format&fit=crop&w=1350&q=80" />
-                {/* <h4>{this.props.streamSelection}</h4> */}
-                <p>Streaming Selection Placeholder - Stream Source</p>
-              </li>
-
-              <li className="restaurantSelection"
-                onClick={() => this.props.getRestaurants(
-                  {
-                    latitude: 42.35984802, 
-                    longitude: -71.05888367, 
-                    categories: ["chinese", "desserts"], 
-                    limit: 5
-                  }
-                )}
-              >
-                {/* <div className="image-stand-in">stand-in for image</div>                <img src="some url that we will likely get from props" /> */}
-              <img className="result-img" src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7fc4917011de5709727efa4b8497bad&auto=format&fit=crop&w=1351&q=80" />
-                {/* <h4>{this.props.restaurantSelection}</h4> */}
-                <p>Restaurant Selection Placeholder - San Francisco, CA</p>
-              </li>
-
-              <li className="movieSelection">
-                {/* <div className="image-stand-in">stand-in for image</div> */}
-              <img className="result-img" src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93960a66ab95463358588dd85dc9d26&auto=format&fit=crop&w=1355&q=80" />
-                {/* <h4>{this.props.movieSelection}</h4> */}
-                <p>Movie Selection Placeholder - San Francisco, CA</p>
-              </li>
-
-              <li className="eventSelection"
-                onClick={() => this.props.getEvents(
-                  {
-                    latitude: 42.35984802,
-                    longitude: -71.05888367,
-                    // segmentId: ticketMasterIds.Miscellaneous.id,
-                    // segmentId: ticketMasterIds.Sports.id,
-                    // segmentId: ticketMasterIds.Music.id,
-                    segmentId: ticketMasterIds.ArtsTheatre.id,
-                    // segmentId: ticketMasterIds.Film.id,
-                  }
-                )}
-              >
-                {/* <div className="image-stand-in">stand-in for image</div> */}
-                {/* <img src="some url that we will likely get from props" /> */}
-              <img className="result-img" src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a413a0b054159dd7840130c25e6dbdf&auto=format&fit=crop&w=1350&q=80" />
-                {/* <h4>{this.props.eventSelection}</h4> */}
-                <p>Event Selection Placeholder - San Francisco, CA</p>
-
-
-              </li>
-            </ul>
+        <div className="result-body">
 
           <ul className="results-body-index">
-            <li className="streamSelection">
-              {/* onClick ={() => <Modal selection="stream"/>}> */}
-              {/* <div className="image-stand-in">stand-in for image</div> */}
-              <img src="https://images.unsplash.com/photo-1521967906867-14ec9d64bee8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63f399f203a46024cdee72cd6aa42163&auto=format&fit=crop&w=1350&q=80" />
-              {/* <h4>{this.props.streamSelection}</h4> */}
-              <p>Streaming Selection Placeholder - Stream Source</p>
-            </li>
+            <ResultItem 
+              caption="Activity" 
+              imgSrc="https://images.unsplash.com/photo-1521967906867-14ec9d64bee8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63f399f203a46024cdee72cd6aa42163&auto=format&fit=crop&w=1350&q=80"
+              modalFn={() => this.openResultModal(this.props.selectActivity)} 
+            />
 
-            <li className="restaurantSelection"
-              onClick={() => this.props.getRestaurants(
-                {
-                  latitude: this.state.coords.latitude,
-                  longitude: this.state.coords.longitude,  
+            <ResultItem 
+              caption="Food" 
+              imgSrc="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7fc4917011de5709727efa4b8497bad&auto=format&fit=crop&w=1351&q=80"
+              modalFn={() => this.openResultModal(this.props.selectRestaurant)} 
+            />
 
-                  categories: ["chinese", "desserts"], 
-                }
-              )}
-            >
-              {/* <div className="image-stand-in">stand-in for image</div>                <img src="some url that we will likely get from props" /> */}
-              <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7fc4917011de5709727efa4b8497bad&auto=format&fit=crop&w=1351&q=80" />
-              {/* <h4>{this.props.restaurantSelection}</h4> */}
-              <p>Restaurant Selection Placeholder - San Francisco, CA</p>
-            </li>
+            <ResultItem 
+              caption="Movie" 
+              imgSrc="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93960a66ab95463358588dd85dc9d26&auto=format&fit=crop&w=1355&q=80"
+              // modalFn={() => this.openResultModal(this.props.selectActivity)} 
+            />
 
-            <li className="movieSelection">
-              {/* <div className="image-stand-in">stand-in for image</div> */}
-              <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93960a66ab95463358588dd85dc9d26&auto=format&fit=crop&w=1355&q=80" />
-              {/* <h4>{this.props.movieSelection}</h4> */}
-              <p>Movie Selection Placeholder - San Francisco, CA</p>
-            </li>
-
-            <li className="eventSelection"
-              onClick={() => this.props.getEvents(
-                {
-                  latitude: this.state.coords.latitude,
-                  longitude: this.state.coords.longitude,  
-
-                  // segmentId: ticketMasterIds.Miscellaneous.id,
-                  // segmentId: ticketMasterIds.Sports.id,
-                  // segmentId: ticketMasterIds.Music.id,
-                  segmentId: ticketMasterIds.ArtsTheatre.id,
-                  // segmentId: ticketMasterIds.Film.id,
-                }
-              )}
-            >
-              {/* <div className="image-stand-in">stand-in for image</div> */}
-              {/* <img src="some url that we will likely get from props" /> */}
-              <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a413a0b054159dd7840130c25e6dbdf&auto=format&fit=crop&w=1350&q=80" />
-              {/* <h4>{this.props.eventSelection}</h4> */}
-              <p>Event Selection Placeholder - San Francisco, CA</p>
-
-            </li>
+            <ResultItem 
+            caption="Event" 
+            imgSrc="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a413a0b054159dd7840130c25e6dbdf&auto=format&fit=crop&w=1350&q=80"
+            modalFn={() => this.openResultModal(this.props.selectEvent)} 
+            />
           </ul>
         </div>
-      </div>
-    )
+      </div>;
   }
 }
