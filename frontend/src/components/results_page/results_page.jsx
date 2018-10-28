@@ -54,8 +54,7 @@ export default class resultsPage extends Component {
       this.setState({coords: pos.coords})
     )
 
-    const error = alert('Please allow location - BoredNoMore')
-    navigator.geolocation.getCurrentPosition(success, error);
+    navigator.geolocation.getCurrentPosition(success);
   }
   
   
