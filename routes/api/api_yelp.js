@@ -11,6 +11,8 @@ const client = yelp.client(apiKeyYelp);
 const apiYelp = (searchOptions) => {
 
   const searchDefaults = {
+    // latitude: 42.35984802, // Boston, MA
+    // longitude: -71.05888367, // Boston, MA
     offset: 0, // AKA next page
     price: [1, 2], // [1,2,3,4] $ $$ $$$ $$$$
     open_now: true, // OR open_at: 1540320750
