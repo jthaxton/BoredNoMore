@@ -95,17 +95,73 @@ export default class resultsPage extends Component {
           </div>
         </div>
 
-        <div className="result-body">
-          {/* <aside className="side-navbar">
-            <ul>
-              <li>My Profile</li>
-              <li />
-              <li />
-              <li />
-              <li>
-                <button className="result-page-logout" onClick={() => this.props.logout()}>
-                  Logout
-                </button>
+          <div className="result-main-body">
+            {/* <aside className="side-navbar">
+              <ul>
+                <li>My Profile</li>
+                <li />
+                <li />
+                <li />
+                <li>
+                  <button className="result-page-logout" onClick={() => this.props.logout()}>
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </aside> */}
+
+            <ul className="results">
+              <li className="streamSelection">
+                {/* onClick ={() => <Modal selection="stream"/>}> */}
+                {/* <div className="image-stand-in">stand-in for image</div> */}
+               <img className="result-img" src="https://images.unsplash.com/photo-1521967906867-14ec9d64bee8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63f399f203a46024cdee72cd6aa42163&auto=format&fit=crop&w=1350&q=80" />
+                {/* <h4>{this.props.streamSelection}</h4> */}
+                <p>Streaming Selection Placeholder - Stream Source</p>
+              </li>
+
+              <li className="restaurantSelection"
+                onClick={() => this.props.getRestaurants(
+                  {
+                    latitude: 42.35984802, 
+                    longitude: -71.05888367, 
+                    categories: ["chinese", "desserts"], 
+                    limit: 5
+                  }
+                )}
+              >
+                {/* <div className="image-stand-in">stand-in for image</div>                <img src="some url that we will likely get from props" /> */}
+              <img className="result-img" src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7fc4917011de5709727efa4b8497bad&auto=format&fit=crop&w=1351&q=80" />
+                {/* <h4>{this.props.restaurantSelection}</h4> */}
+                <p>Restaurant Selection Placeholder - San Francisco, CA</p>
+              </li>
+
+              <li className="movieSelection">
+                {/* <div className="image-stand-in">stand-in for image</div> */}
+              <img className="result-img" src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93960a66ab95463358588dd85dc9d26&auto=format&fit=crop&w=1355&q=80" />
+                {/* <h4>{this.props.movieSelection}</h4> */}
+                <p>Movie Selection Placeholder - San Francisco, CA</p>
+              </li>
+
+              <li className="eventSelection"
+                onClick={() => this.props.getEvents(
+                  {
+                    latitude: 42.35984802,
+                    longitude: -71.05888367,
+                    // segmentId: ticketMasterIds.Miscellaneous.id,
+                    // segmentId: ticketMasterIds.Sports.id,
+                    // segmentId: ticketMasterIds.Music.id,
+                    segmentId: ticketMasterIds.ArtsTheatre.id,
+                    // segmentId: ticketMasterIds.Film.id,
+                  }
+                )}
+              >
+                {/* <div className="image-stand-in">stand-in for image</div> */}
+                {/* <img src="some url that we will likely get from props" /> */}
+              <img className="result-img" src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a413a0b054159dd7840130c25e6dbdf&auto=format&fit=crop&w=1350&q=80" />
+                {/* <h4>{this.props.eventSelection}</h4> */}
+                <p>Event Selection Placeholder - San Francisco, CA</p>
+
+
               </li>
             </ul>
           </aside> */}
