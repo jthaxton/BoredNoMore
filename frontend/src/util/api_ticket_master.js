@@ -4,7 +4,7 @@ const axios = require('axios');
 const Geohash = require('latlon-geohash');
 const apiKeyTicketMaster = require("./keys").apiKeyTicketMaster;
 
-const ticketMasterIds = require("./api_ticket_master_ids.js")
+// const ticketMasterIds = require("./api_ticket_master_ids.js")
 
 export const apiTicketMaster = (searchOptions) => {
 

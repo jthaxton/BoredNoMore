@@ -50,11 +50,11 @@ export default class resultsPage extends Component {
   }
 
   componentDidMount() {
-    const success = (pos) => (
-      this.setState({coords: pos.coords})
-    )
-
-    navigator.geolocation.getCurrentPosition(success);
+    console.log('Getting location...');    
+    navigator.geolocation.getCurrentPosition(
+      (pos) => (this.setState({ coords: pos.coords })),
+      () => alert('Could not locate, please allow location')
+    );
   }
   
   
@@ -96,20 +96,6 @@ export default class resultsPage extends Component {
         </div>
 
         <div className="result-body">
-          {/* <aside className="side-navbar">
-            <ul>
-              <li>My Profile</li>
-              <li />
-              <li />
-              <li />
-              <li>
-                <button className="result-page-logout" onClick={() => this.props.logout()}>
-                  Logout
-                </button>
-              </li>
-            </ul>
-          </aside> */}
-
           <ul className="results-body-index">
             <li className="streamSelection">
               {/* onClick ={() => <Modal selection="stream"/>}> */}
