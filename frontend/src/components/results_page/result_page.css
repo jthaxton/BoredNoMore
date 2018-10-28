@@ -85,7 +85,6 @@ li {
     margin-top: 50px;
 }
 
-.results li {
 
 .results-body-index li {
     width: 35%;
@@ -96,7 +95,7 @@ li {
     box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.40);   
 }
 
-.results-body-index div, img {
+.results-body-index div img {
     max-height: 250px;
     max-width: 400px;
     width: 90%;
