@@ -4,6 +4,7 @@ import React, {
 import './App.css';
 import signup_form_container from "./components/session/signup_form_container";
 import splashComponent from "./components/splash/splash";
+import whyUsComponent from './components/whyUs/whyUs'
 import {
   Switch,
   Route
@@ -16,6 +17,8 @@ const App = () => (
     <Switch>
       <Route exact path = "/" component={splashComponent} />
       <Route exact path="/signup" component={signup_form_container} />
+      <Route exact path="/whyus" component={whyUsComponent} />
+
       <Route exact path="/results" component={resultsPageContainer} />
       {/* <Route exact path="/form" component={formComponent} /> */}
       {/* above just to test form. dont delete please! */}
