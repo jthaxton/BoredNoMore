@@ -1,25 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import FormModal from './form-modal';
+import IndexModal from './index-modal';
 import './splash.css';
 
+
 Modal.setAppElement('#root')
-// const customStyles = {
-//   content : {
-//     top                   : '50%',
-//     left                  : '50%',
-//     right                 : 'auto',
-//     bottom                : 'auto',
-//     // marginRight           : '-50%',
-//     transform             : 'translate(-50%, -50%)'
-//   }
-// };
 
 export default class SplashComponent extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             modalIsOpen: false,
+            modalComponent: null,
             background_index: 3,
             background_images: [
             'https://stmed.net/sites/default/files/restaurant-wallpapers-28840-4336902.jpg',
@@ -30,8 +24,9 @@ export default class SplashComponent extends React.Component {
         }
         this.changeImage = this.changeImage.bind(this)
         this.openModal = this.openModal.bind(this);
-        this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.setState = this.setState.bind(this);
+        this.openIndexModal = this.openIndexModal.bind(this);
     } 
 
     changeImage() {
@@ -56,33 +51,26 @@ export default class SplashComponent extends React.Component {
         this.setState({modalIsOpen: true});
     }
 
-    afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // this.subtitle.style.color = '#f00';
-}
-
     closeModal() {
         this.setState({modalIsOpen: false});
   }
-  
 
+    openIndexModal() {
 
+        this.setState({modalIsOpen: true, modalComponent: <IndexModal />})
+    }    
+
+    openFormModal() {
+        this.setState({modalIsOpen: true, modalComponent: <FormModal />})
+    }
 
 
     render(){
-        // let component;
-        // switch(modalClassName){
-        //     case 'modal':
-        //     break;
-        //     case 'modal-form':
-        //     break;
-        // }
-
         return(
         <div className="splash-page">
             <div className="splash-top-nav">
                 <button className="index-list-button" id="index-button"
-                onClick={this.openModal}>
+                onClick={this.openIndexModal.bind(this)}>
                     <img src="https://archive.li/2lOth/6137843c93a88319db1888612acbbcfc745dc988.png" />
                 </button>
 
@@ -91,7 +79,7 @@ export default class SplashComponent extends React.Component {
             <div className="splash-content">
                 <h1>Need Recommendations?</h1>
                 <button className="quiz-button"
-                        onClick={this.openModal}>
+                        onClick={this.openFormModal.bind(this)}>
                     TAKE QUIZ
                 </button>
 
@@ -101,28 +89,14 @@ export default class SplashComponent extends React.Component {
     
         
             <Modal
-            className="modal"
-            overlayClassName="Overlay"
-            isOpen={this.state.modalIsOpen}
-              onAfterOpen={this.afterOpenModal}
-              onRequestClose={this.closeModal}
-            
+                className="modal"
+                overlayClassName="Overlay"
+                isOpen={this.state.modalIsOpen}
+                onAfterOpen={this.afterOpenModal}
+                onRequestClose={this.closeModal}>
 
-                >
-                <ul className="modal-list">
-                    <li>HOME </li>
-                    <li>WHY US </li>
-                    <li>LOGIN< /li>
-                </ul>
-                <ul className="modal-info">
-                    <li> IG </li>
-                    <li> TWITTER </li>
-                    <li> FB </li>
-                    <li> FAQS </li>
-                    <li> TERMS OF USE </li>
-                    <li> PRIVACY </li>
-                    <li> CONTACT </li>
-                    </ul>
+                { this.state.modalComponent }
+
             </Modal>
              
         </div>
