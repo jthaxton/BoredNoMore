@@ -1,9 +1,5 @@
 body {
-    background: black;
-    color: gainsboro;
-    height: 100%;
-    width: 100%;
-    /* overflow: hidden; */
+    background-color: black;
 }
 
 li {
@@ -11,127 +7,89 @@ li {
 }
 
 .results-all{
+    background: black;
+    color: gainsboro;
+    
     display: flex;
     flex-direction: column;
-    /* box-sizing: inherit; */
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
 
 .result-header{
-    display: inline-block;
     height: 90px;
-    /* border: 1px blue solid; */
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
 }
 
 .user-greeting{
     border: 1px gainsboro solid;
-    float: left;
-    /* height: 70px;*/
     width: 300px; 
     height: 78px;
     font-size: 27px;
-    padding: 20px;
-    padding-bottom: 0px;
-    padding-top: 0px;
-    /* margin-top: 25px; */
-    margin-bottom: 25px;
+    padding: 0px 20px;
     border-radius: 15px;
     background:rgba(255, 255, 255, 0.3);
+
     display:flex;
+    align-items: center;
 }
 
 .user-greeting i {
-    margin-right: 30px;
-    float: left;
+    margin: 0px 30px;
 }
 
-.welcomeuser{
-    float:left;
-    margin-top: 23px;
-}
-
-.borednomore-results{
-    float: left;
+.borednomore-logo {
     position: absolute;
     top: 5px;
     right: 40px;
     font-weight: normal;
     font-size: 50px;
-    margin-top: 0px;
+    margin: 15px;
 }
 
-.result-main-body{
-    display: inline-block;
-    /* height: 100vh; */
+.result-body{
+    width: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-.side-navbar{
-    display:flex;
-    border: 1px solid gainsboro;
-    /* height: 100%; */
-    height: 400px;
-    width: 200px;
-    float: left;
-    border-radius: 15px;
-    background:rgba(255,255,255, 0.3);
-    margin-top: 30px;
-    margin-left:40px;
-    font-size: 20px;
-    text-align: center;
-}
-
-.side-navbar li{
-    padding-bottom: 5px;
-    margin-left: 20px;
-}
-
-.results{
-    border: 1px solid black;
-    float: left;
+.result-body ul {
+    font-weight: bold;
+    margin: 20px;
+    padding: 0px;
+    
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 80%;
     flex-wrap: wrap;
-    padding-left: 130px;
-    padding-right: 130px;
-    font-weight: bold;
-    margin-top: 0px;
+    justify-content: center;
 }
 
-.results div img{
-    height: 270px;
-    width: 400px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 50px;
-}
-
-.results li {
+.results-body-index li {
+    width: 35%;
     border: 1px solid black;
     margin: 25px; 
     text-align: center;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
     border-radius: 20px;
-    -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.40);
-    -moz-box-shadow:    0px 0px 30px 0px rgba(255, 255, 255, 0.40);
-    box-shadow:         0px 0px 30px 0px rgba(255, 255, 255, 0.40);   
+    box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.40);   
 }
 
+.results-body-index div, img {
+    max-height: 250px;
+    max-width: 400px;
+    width: 90%;
+    margin: 20px 10px 0px 10px;
+    border-radius: px;
+}
 
-.results li:hover {
+.results-body-index li:hover {
     border: 1px solid black;
     margin: 25px;
     cursor: pointer;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.80);
-    -moz-box-shadow:    0px 0px 50px 0px rgba(255, 255, 255, 0.80);
-    box-shadow:         0px 0px 50px 0px rgba(255, 255, 255, 0.80);
-    }
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.80);
+}
