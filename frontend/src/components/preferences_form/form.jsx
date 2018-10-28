@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Form1 from './form1/form1_name_container';
-import Form15 from "./form1/form1.5_location_container";
+import Form15 from "./form1/form15_location";
 import Form2 from './form2/form2_watchpref_container';
 import Form3 from "./form3/form3_foodpref_container";
 import Form4 from "./form4/form4_eventpref_container";
@@ -24,19 +24,23 @@ class Form extends Component {
             eventTypes: [],
             subs: []
         }
-
+        
         this.nextStep = this.nextStep.bind(this);
+        this.saveEntries = this.saveEntries.bind(this);
+        // this.setState = this.setState.bind(this);
     }
+    
 
-    saveEntries(entries){
-        this.setState(Object.assign({}, this.state, entries))
+    saveEntries(entry){
+        this.setState(Object.assign({}, this.state, entry))
     } 
     //setState to Object that combines this.state and entries object with updated fields
 
     nextStep(e){
+        console.log(this.state);
         this.setState({
             step: this.state.step + 1
-        })
+        }, () => console.log(this.state));
     }
 
     previousStep(e){
@@ -50,9 +54,11 @@ class Form extends Component {
         case 1:
             return <Form1 
                         name={this.state.name}
+                        step={this.state.step}
                         nextStep={this.nextStep}
                         saveEntries={this.saveEntries} />
         case 2:
+            console.log('RENDER 2');
             return <Form15 
                         location={this.state.location}
                         nextStep={this.nextStep}
