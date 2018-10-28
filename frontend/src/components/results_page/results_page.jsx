@@ -92,16 +92,10 @@ export default class resultsPage extends Component {
         </button>
       );
 
-    return(
-      <div className="results-all">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossOrigin="anonymous"/>
+    return <div className="results-all">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossOrigin="anonymous" />
 
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-        >
+        <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.afterOpenModal} onRequestClose={this.closeModal} style={customStyles}>
           {this.state.modalComponent}
         </Modal>
 
@@ -115,10 +109,8 @@ export default class resultsPage extends Component {
               Welcome, {this.props.currentUser.name}
             </p> */}
           </section>
-          
-          <div className="borednomore-logo">
-            BoredNoMore
-          </div>
+
+          <div className="borednomore-logo">BoredNoMore</div>
         </div>
 
         <div className="result-body">
@@ -128,9 +120,14 @@ export default class resultsPage extends Component {
               <p>Activity</p>
             </li>
 
-            <li className="restaurantSelection"
-              onClick={() => this.setState({ modalComponent: <ResultModal />, modalIsOpen: true})}
-            >
+            <li className="restaurantSelection" onClick={() => this.setState(
+                  {
+                    modalComponent: (
+                      <ResultModal data={this.props.selectRestaurant} />
+                    ),
+                    modalIsOpen: true
+                  }
+                )}>
               <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7fc4917011de5709727efa4b8497bad&auto=format&fit=crop&w=1351&q=80" />
               <p>Food</p>
             </li>
@@ -140,19 +137,17 @@ export default class resultsPage extends Component {
               <p>Movie</p>
             </li>
 
-            <li className="eventSelection"
-              onClick={() => this.setState({ 
-                modalComponent: <ResultModal 
-                                  data={this.props.selectEvent}
-                                />, 
-                modalIsOpen: true })}
-            >
+            <li className="eventSelection" onClick={() => this.setState({
+                  modalComponent: (
+                    <ResultModal data={this.props.selectEvent} />
+                  ),
+                  modalIsOpen: true
+                })}>
               <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a413a0b054159dd7840130c25e6dbdf&auto=format&fit=crop&w=1350&q=80" />
               <p>Event</p>
             </li>
           </ul>
         </div>
-      </div>
-    )
+      </div>;
   }
 }
