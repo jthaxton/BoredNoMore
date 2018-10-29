@@ -4,20 +4,26 @@ import "./result_modal.css";
 export default function ResultModal({data}) {
   return (
     <div className='result-modal'>
-      <a href={data.url} target="_blank">
-        <img 
-          src={data.image_url}
-          alt='result'
-        />
-      </a>
+      <div className='result-modal-image-div'>
+        <a href={data.url} target="_blank">
+          <img 
+            src={data.image_url}
+            alt='result'
+          />
+        </a>
+      </div>
 
-      <a href={data.url} target="_blank">
-        {data.name}
-      </a>
+      <div className='result-modal-info-div'>
+        <p>
+          <a href={data.url} target="_blank">
+            {data.name}
+          </a>
+        </p>
 
-      <p>
-        {data.address}
-      </p>
+        <p>
+          {data.address}
+        </p>
+      </div>
     </div>
   )
 }
