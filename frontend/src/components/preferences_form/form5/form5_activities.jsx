@@ -35,7 +35,7 @@ export default class Form5Activities extends Component {
 
     render() {
         return (
-            <div>
+      <div className="form-page">
                 <h1>BoredNoMore</h1>
                 <h4>For {this.props.name}</h4>
                 <form>
