@@ -28,7 +28,7 @@ export default class Form15Location extends Component {
       <div className="form-page">
         <h1>BoredNoMore</h1>
         <h4>For {this.props.name}</h4>
-        <form>
+        <form className="form-content">
             <h1>Let's get started.</h1>
             <h1>Where are you looking?</h1>
             <input

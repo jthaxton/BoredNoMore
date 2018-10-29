@@ -50,8 +50,8 @@ export default class whyUs extends React.Component {
                     <img src="https://cdn2.iconfinder.com/data/icons/integers/60/number-three-512.png" />
                         <div className="whyUs-list-text">
                     <h3> INFORMED RECOMMENDATIONS </h3>
-                    <p>We look at a wide range of paramaters including what's 
-                        trending, and what's new to feed our recommendations algorithem.  Then we compare
+                    <p>We look at a wide range of parameters including what's 
+                        trending, and what's new to feed our recommendations algorithm.  Then we compare
                         that to what you've told us you love.</p>
                         </div>
                     <img src="https://cdn1.iconfinder.com/data/icons/infographic-vol-7/512/10-128.png" />
