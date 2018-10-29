@@ -42,40 +42,25 @@ export default class Form4EventPref extends Component {
                     <h1>What events do you like?</h1>
                     <ul>
                         <li>
-                            <button onClick={this.handleSelect("event1")} />
+                            <button onClick={this.handleSelect("Sports")} />
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("event2")} />
+                            <button onClick={this.handleSelect("Music")} />
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("event3")} />
+                            <button onClick={this.handleSelect("ArtsTheatre")} />
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("event4")} />
+                            <button onClick={this.handleSelect("Film")} />
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("event5")} />
+                            <button onClick={this.handleSelect("Miscellaneous")} />
                         </li>
 
-                        <li>
-                            <button onClick={this.handleSelect("event6")} />
-                        </li>
-
-                        <li>
-                            <button onClick={this.handleSelect("event7")} />
-                        </li>
-
-                        <li>
-                            <button onClick={this.handleSelect("event8")} />
-                        </li>
-
-                        <li>
-                            <button onClick={this.handleSelect("event9")} />
-                        </li>
                     </ul>
                 </form>
                 <button className="next-step" onClick={this.nextStep.bind(this)}>

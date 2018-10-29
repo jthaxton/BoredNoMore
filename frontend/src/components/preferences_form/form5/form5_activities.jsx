@@ -1,24 +1,24 @@
 
 import React, { Component } from "react";
 
-export default class Form5Subs extends Component {
+export default class Form5Activities extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { subs: [] };
+        this.state = { activities: [] };
     }
 
     handleSelect(sub) {
         return (e) => {
-            let subsArr = []
+            let activitiesArr = []
 
-            if (subsArr.length > 3) {
+            if (activitiesArr.length > 3) {
                 alert("You may only select 3 genres.");
             } else {
-                subsArr = this.state.subs;
-                if (!subsArr.includes(sub)) {
-                    subsArr.push(sub);
-                    this.setState({ subs: subsArr });
+                activitiesArr = this.state.activities;
+                if (!activitiesArr.includes(activity)) {
+                    activitiesArr.push(activity);
+                    this.setState({ activities: activitiesArr });
                 }
             }
         }
@@ -26,7 +26,7 @@ export default class Form5Subs extends Component {
 
     nextStep() {
         let entry = {
-            subs: this.state.subs
+            activities: this.state.activities
         }
         this.props.saveEntries(entry);
         this.props.nextStep()
@@ -39,30 +39,30 @@ export default class Form5Subs extends Component {
                 <h1>BoredNoMore</h1>
                 <h4>For {this.props.name}</h4>
                 <form>
-                    <h1>What subscriptions for you have?</h1>
+                    <h1>What activities do you enjoy?</h1>
                     <ul>
                         <li>
-                            <button onClick={this.handleSelect("Netflix")} />
+                            <button onClick={this.handleSelect("active")} />
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("Amazon Prime")} />
+                            <button onClick={this.handleSelect("arts")} />
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("Hulu")} />
+                            <button onClick={this.handleSelect("beautysvc")} />
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("HBO")} />
+                            <button onClick={this.handleSelect("localservices")} />
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("Sling")} />
+                            <button onClick={this.handleSelect("shopping")} />
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("sub6")} />
+                            <button onClick={this.handleSelect("skiresorts")} />
                         </li>
                     </ul>
                 </form>
