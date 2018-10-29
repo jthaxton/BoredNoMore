@@ -1,0 +1,30 @@
+.form-page{
+    position: absolute;
+    text-align: center;
+    color: #f5f2e7;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.form-content  {
+    /* background-color: darkblue; */
+    align-items: center;
+    margin-top: 100px;
+}
+.form-content input{
+    background: transparent;
+    border: none;
+    width: 300px;
+    color: #f5f2e7;
+    font-size: 25px;
+    border-bottom: 2px solid papayawhip;
+    outline: none;
+}
+.next-step{
+    background: transparent;
+    border: none;
+    width: 100px;
+    height: 25px;
+    color: #f5f2e7;
+    font-size: 25px
+}

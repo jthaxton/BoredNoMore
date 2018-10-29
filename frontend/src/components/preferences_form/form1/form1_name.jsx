@@ -23,10 +23,11 @@ export default class form1_Name extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-page">
+      
         <h1>BoredNoMore</h1>
-        <h4>For </h4>
-        <form>
+        <h4>For {this.state.name}</h4>
+        <form className="form-content">
             <h1>First, what should we call you?</h1>
             <input 
                 // value="{this.state.name}"
@@ -35,7 +36,7 @@ export default class form1_Name extends Component {
         </form >
         <button 
             className="next-step"
-            onClick={this.nextStep}>Next</button>
+            onClick={this.nextStep.bind(this)}>Next</button>
       </div>
     )
   }
