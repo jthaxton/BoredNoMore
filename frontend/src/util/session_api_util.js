@@ -5,6 +5,7 @@ const $ = window.$;
 export const GET_ERRORS = 'GET_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const SIGNUP_USER = "SIGNUP_USER";
 
 
 export const setAuthToken = token => {
@@ -29,6 +30,9 @@ export const registerUser = (userData, history) => dispatch => {
             const decoded = jwt_decode(token);
             // Set current user
             dispatch(setCurrentUser(decoded));
+        })
+        .then(user => {
+            dispatch(signupUser(user))
         })
         .catch(err =>
             dispatch({
@@ -75,4 +79,11 @@ export const setCurrentUser = decoded => {
         type: SET_CURRENT_USER,
         payload: decoded
     };
+};
+
+const signupUser = user => {
+  return {
+    type: SIGNUP_USER,
+    user
+  };
 };
