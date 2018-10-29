@@ -8,29 +8,23 @@ export default class Form1Name extends Component {
         this.state = {
             name: "Me"
         }
-        console.log(this.props)
-        // this.setState = this.setState.bind(this.props);
     }
     
 
     changeName(e){
         return (e) => {
             this.setState({name: e.target.value })
-            console.log(this.state);
         }
         
     }
 
     nextStep(){
-        // this.setState({ step: this.props.step + 1 });
-        // console.log(this.props)
         let entry = {
             name: this.state.name
         }
 
         this.props.saveEntries(entry);
         this.props.nextStep()
-        // console.log("hello")
 
 
     }
@@ -43,8 +37,7 @@ export default class Form1Name extends Component {
         <h4>For {this.state.name}</h4>
         <form className="form-content">
             <h1>First, what should we call you?</h1>
-            <input 
-                // value="{this.state.name}"
+            <input
                 onChange={this.changeName()} >
             </input>
         </form >

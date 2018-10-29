@@ -21,26 +21,22 @@ class Form extends Component {
             location: "",
             genres: [],
             cuisines: [],
-            eventTypes: [],
+            events: [],
             subs: []
         }
-        console.log(this.props)
         this.nextStep = this.nextStep.bind(this);
         this.saveEntries = this.saveEntries.bind(this);
-        // this.setState = this.setState.bind(this);
     }
     
 
     saveEntries(entry){
         this.setState(Object.assign({}, this.state, entry))
     } 
-    //setState to Object that combines this.state and entries object with updated fields
 
     nextStep(e){
         this.setState({
             step: this.state.step + 1
         });
-        console.log(this.state)
     }
 
     previousStep(e){
@@ -90,9 +86,6 @@ class Form extends Component {
             return <Form6
                         data={this.state}
                         signUp={this.props.signUp}
-                        // name={this.state.name}
-                        // email={this.state.email}
-                        // password={this.state.password}
                         saveEntries={this.saveEntries} 
                         />
         default:
@@ -101,9 +94,7 @@ class Form extends Component {
                         nextStep={this.nextStep}
                         saveEntries={this.saveEntries} />
     }
-    // return(
-    //     <Form1 />
-    // )
+
   };
 }
 

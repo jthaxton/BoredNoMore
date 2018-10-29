@@ -1,8 +1,9 @@
 
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
 
 
-export default class SignUp extends Component {
+class SignUp extends Component {
 
     constructor(props) {
         super(props);
@@ -13,10 +14,24 @@ export default class SignUp extends Component {
         console.log(this.props)
     }
 
+    saveSignup(type){
+        return (e) =>{
+            this.setState({ [type]: e.target.value })
+        }
+    }
+
     handleSubmit(e) {
-        e.preventDefault();
-        this.props.saveEntries(this.state);
-        this.props.signUp(this.props).then(() => this.props.history.push('/results'));
+        // e.preventDefault();
+        let entry = {
+            email: this.state.email,
+            password: this.state.password
+        }
+        console.log(this.props)
+        this.props.saveEntries(entry);
+        console.log(this.state)
+        let userData = Object.assign({}, this.props.data, this.state)
+        console.log(userData)
+        this.props.signUp({userData}).then(() => this.props.history.push('/results'));
     }
 
 
@@ -35,10 +50,14 @@ export default class SignUp extends Component {
 
                 <ul>
                     <li>Email:
-                        <input type="text"></input>
+                        <input type="text"
+                            onChange={this.saveSignup('email')}
+                        ></input>
                     </li>
                     <li>Password:
-                        <input type="password"></input>>
+                        <input type="password"
+                            onChange={this.saveSignup('password')}
+                            ></input>>
                     </li>
 
                     <li><button 
@@ -56,5 +75,4 @@ export default class SignUp extends Component {
     }
 }
 
-
-
+export default withRouter(SignUp);
