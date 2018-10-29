@@ -1,19 +1,24 @@
-// import { setCurrentUser } from '../util/session_api_util';
+import { registerUser } from '../util/session_api_util';
 
-// export const SIGNUP_USER = "SIGNUP_USER";
+export const SIGNUP_USER = "SIGNUP_USER";
 
 
-// export const setCurrentUser = (userData) => {
+export const registerTheUser = (userData) => dispatch => (
+        registerUser(userData)
+            .then( user => { dispatch(signupUser(user))
+        })
+    )
+// export const registerTheUser = (userData) => {
 //     return dispatch => {
-//         return setCurrentUser(userData).then( user => {
+//         return registerUser(userData).then( user => {
 //             return dispatch(signupUser(user))
 //         })
 //     }
 // }
 
-// const signupUser = (user) => {
-//     return {
-//         type: SET_CURRENT_USER,
-//         user
-//     }
-// }
+const signupUser = (user) => {
+    return {
+        type: SIGNUP_USER,
+        user
+    }
+}

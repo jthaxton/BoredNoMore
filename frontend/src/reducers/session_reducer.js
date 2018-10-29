@@ -20,6 +20,10 @@ const sessionReducer = (state = _nullUser, action) => {
                 name: action.payload.name,
                 email: action.payload.email
             };
+        case SIGNUP_USER:
+            return{
+                currentUser: action.user
+            }
         default:
             return state;
     }

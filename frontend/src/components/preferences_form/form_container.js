@@ -1,19 +1,14 @@
 import { connect } from "react-redux";
-
+// import { registerTheUser } from "../../actions/session_actions";
+import { registerUser } from "../../util/session_api_util";
 import Form from './form';
 
-const mstp = (state) => {
-    return{
-        formNum: state.session.form.formStep,
-        name: state.session.form.name,
-        email: state.session.form.email,
-        password: state.session.form.password,
-        location: state.session.form.location,
-        genres: state.session.form.genres,
-        cuisines: state.session.form.cuisines,
-        eventTypes: state.session.form.eventTypes,
-        subs: state.session.form.subs,
-    }
-}
+const mdtp = dispatch => {
+  return {
+    signUp: userData => dispatch(registerUser(userData))
+  };
+};
 
-export default connect(mstp, null)(Form);
+
+
+export default connect(null, mdtp)(Form);
