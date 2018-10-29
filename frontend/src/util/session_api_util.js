@@ -80,9 +80,9 @@ export const setCurrentUser = decoded => {
     };
 };
 
-const signupUser = user => {
+const signupUser = payload => {
   return {
     type: SIGNUP_USER,
-    user
+    payload
   };
 };

@@ -31,7 +31,7 @@ class SignUp extends Component {
         console.log(this.state)
         let userData = Object.assign({}, this.props.data, this.state)
         console.log(userData)
-        this.props.signUp({userData}).then(() => this.props.history.push('/results'));
+        this.props.signUp(userData).then(() => this.props.history.push('/results'));
     }
 
 
