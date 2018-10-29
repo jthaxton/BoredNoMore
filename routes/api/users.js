@@ -55,8 +55,15 @@ router.post("/register", (req, res) => {
                 info: {
                 name: req.body.name,
                 email: req.body.email,
-                password: req.body.password
-                }
+                password: req.body.password,
+                },
+                preferences: {
+                    cuisine: req.body.cuisines,
+                    movieGenre: req.body.genres,
+                    streamGenre: req.body.subs,
+                    liveEventType: req.body.events,
+                    zip: req.body.location
+                },
             });
 
             bcrypt.genSalt(10, (err, salt) => {
