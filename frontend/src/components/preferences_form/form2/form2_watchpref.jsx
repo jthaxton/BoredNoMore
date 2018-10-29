@@ -37,46 +37,51 @@ export default class Form2WatchPref extends Component {
 
     render() {
         return( 
-            <div>
+      <div className="form-page-wlist">
             <h1>BoredNoMore</h1>
             <h4>For {this.props.name}</h4>
-            <form>
+            <form >
               <h1>What do you like to watch?</h1>
-              <ul>
+              <ul className="form-list">
                 <li>
-                  <button onClick={this.handleSelect("action")} />
+                  <button onClick={this.handleSelect("action")}> 
+                  ACTION 
+                  {/* <img src="https://cdn3.iconfinder.com/data/icons/outline-amenities-icon-set/64/Cable_TV-512.png" /> */}
+                  < /button>
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("comedy")} />
+                  <button onClick={this.handleSelect("comedy")}> COMEDY 
+                  {/* <img src="https://cdn3.iconfinder.com/data/icons/solid-amenities-icon-set/64/Cable_TV_2-512.png" /> */}
+                  < /button>
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("drama")} />
+                    <button onClick={this.handleSelect("drama")} > DRAMA < /button>
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("romance")} />
+                    <button onClick={this.handleSelect("romance")} > ROMANCE < /button>
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("horror")} />
+                    <button onClick={this.handleSelect("horror")} > HORROR < /button>
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("documentary")} />
+                    <button onClick={this.handleSelect("documentary")} > DOCUMENTARY < /button>
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("thriller")} />
+                    <button onClick={this.handleSelect("thriller")}> THRILLER < /button>
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("kids")} />
+                    <button onClick={this.handleSelect("kids")}> KIDS < /button>
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("sci-fi/fantasy")} />
+                    <button onClick={this.handleSelect("sci-fi/fantasy")} > SCI-FI  < /button>
                 </li>
               </ul>
             </form>
