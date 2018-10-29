@@ -37,10 +37,11 @@ export default class Form1Name extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-page">
+      
         <h1>BoredNoMore</h1>
-        <h4>For </h4>
-        <form>
+        <h4>For {this.state.name}</h4>
+        <form className="form-content">
             <h1>First, what should we call you?</h1>
             <input 
                 // value="{this.state.name}"

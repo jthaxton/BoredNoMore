@@ -4,14 +4,12 @@ const axios = require('axios');
 const Geohash = require('latlon-geohash');
 const apiKeyTicketMaster = require("./keys").apiKeyTicketMaster;
 
-const ticketMasterIds = require("./api_ticket_master_ids.js")
+// const ticketMasterIds = require("./api_ticket_master_ids.js")
 
 export const apiTicketMaster = (searchOptions) => {
 
   // Default query parameters
   const searchDefaults = {
-    latitude: 37.7986717, // San Francisco, CA
-    longitude: -122.4012891, // San Francisco, CA
     radius: 100, // radius in miles
 
     includeFamily: 'no', // family-friendly?

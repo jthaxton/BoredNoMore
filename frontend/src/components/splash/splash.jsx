@@ -27,6 +27,8 @@ export default class SplashComponent extends React.Component {
         this.closeModal = this.closeModal.bind(this);
         this.setState = this.setState.bind(this);
         this.openIndexModal = this.openIndexModal.bind(this);
+        this.handleGoWhyUs = this.handleGoWhyUs.bind(this)
+        //   this.afterOpenModal = this.afterOpenModal.bind(this);
     } 
 
     changeImage() {
@@ -63,6 +65,10 @@ export default class SplashComponent extends React.Component {
     openFormModal() {
         this.setState({modalIsOpen: true, modalComponent: <FormModal />})
     }
+  handleGoWhyUs(e, AlbumID){
+    e.preventDefault();
+    this.props.history.push(`/whyUs`);
+  }
 
 
     render(){
@@ -96,6 +102,7 @@ export default class SplashComponent extends React.Component {
                 onRequestClose={this.closeModal}>
 
                 { this.state.modalComponent }
+
 
             </Modal>
              
