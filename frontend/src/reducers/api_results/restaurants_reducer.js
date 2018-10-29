@@ -1,6 +1,6 @@
 import {
   FETCH_RESTAURANTS
-} from '../../actions/form_actions';
+} from '../../actions/result_actions';
 
 const restaurantsReducer = (state = {}, action) => {
   Object.freeze(state);
