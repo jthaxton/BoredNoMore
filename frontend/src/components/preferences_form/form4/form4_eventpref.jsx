@@ -35,30 +35,30 @@ export default class Form4EventPref extends Component {
 
     render() {
         return (
-      <div className="form-page">
+      <div className="form-page-wlist">
                 <h1>BoredNoMore</h1>
                 <h4>For {this.props.name}</h4>
                 <form>
                     <h1>What events do you like?</h1>
-                    <ul>
+              <ul className="form-list">
                         <li>
-                            <button onClick={this.handleSelect("Sports")} />
+                            <button onClick={this.handleSelect("Sports")}> SPORTS </button>
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("Music")} />
+                            <button onClick={this.handleSelect("Music")}> MUSIC </button>
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("ArtsTheatre")} />
+                            <button onClick={this.handleSelect("ArtsTheatre")}> THEATRE </button>
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("Film")} />
+                            <button onClick={this.handleSelect("Film")}> FILM </button>
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("Miscellaneous")} />
+                            <button onClick={this.handleSelect("Miscellaneous")}> MISC </button>
                         </li>
 
                     </ul>

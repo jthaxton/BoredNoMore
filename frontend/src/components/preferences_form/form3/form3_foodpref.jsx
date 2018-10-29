@@ -34,7 +34,8 @@ export default class Form3FoodPref extends Component {
 
 
     render() {
-        return       <div className="form-page">
+        return             <div className="form-page-wlist">
+
 
             <h1>BoredNoMore</h1>
             <h4>For {this.props.name}</h4>

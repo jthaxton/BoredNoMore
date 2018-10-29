@@ -17,35 +17,34 @@ signUp(){
 
 
     render() {
-        return       <div className="form-page">
-
+        return <div className="form-page">
             <h1>BoredNoMore</h1>
             <h4>For {this.props.name}</h4>
-            <form>
+        <form className="form-content">
               <h1>Almost there...</h1>
               <ul>
-                <li>
+                {/* <li>
                   <button onClick={this.signUp}>
                     Yes, please!
                   </button>
-                </li>
+                </li> */}
 
                 <ul>
                     <li>Email:
                         <input type="text"></input>
                     </li>
                     <li>Password:
-                        <input type="password"></input>>
+                        <input type="password"></input>
                     </li>
 
-                    <li><button>Sign Up!</button></li>
                 </ul>
+                </ul>
+                <div className="signup-button-options">
+                    <button>Sign Up!</button>
                 
 
-                <li>
                   <button onClick={this.signUp}>No, thanks.</button>
-                </li>
-              </ul>
+                  </div>
             </form>
           </div>;
     }

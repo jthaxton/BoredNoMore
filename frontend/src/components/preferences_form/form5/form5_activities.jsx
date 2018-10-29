@@ -35,34 +35,34 @@ export default class Form5Activities extends Component {
 
     render() {
         return (
-      <div className="form-page">
+      <div className="form-page-wlist">
                 <h1>BoredNoMore</h1>
                 <h4>For {this.props.name}</h4>
                 <form>
                     <h1>What activities do you enjoy?</h1>
-                    <ul>
+              <ul className="form-list">
                         <li>
-                            <button onClick={this.handleSelect("active")} />
+                            <button onClick={this.handleSelect("active")}> ACTIVE </button >
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("arts")} />
+                            <button onClick={this.handleSelect("arts")} > ARTS </button >
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("beautysvc")} />
+                            <button onClick={this.handleSelect("beautysvc")} > BEAUTY </button >
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("localservices")} />
+                            <button onClick={this.handleSelect("localservices")} > SERVICES </button >
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("shopping")} />
+                            <button onClick={this.handleSelect("shopping")} > SHOPPING </button >
                         </li>
 
                         <li>
-                            <button onClick={this.handleSelect("skiresorts")} />
+                            <button onClick={this.handleSelect("skiresorts")} > SKIING </button >
                         </li>
                     </ul>
                 </form>
