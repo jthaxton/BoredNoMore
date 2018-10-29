@@ -4,12 +4,64 @@
   width: 500px;
   padding: 0px;
   color: white;
-  /* margin: -20px; */
-  border-radius: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.40);
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+}
+
+.hover-glow:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.80);
+}
+
+.result-modal-image-div {
+  max-width: 90%;
+  max-height: 300px;
+  margin: 10px;
+
+  display: flex;
   justify-content: center;
 }
 
+.result-modal-image-div img {
+  min-width: 200px;
+  max-width: 100%;
+  max-height: 350px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.result-modal-info-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.result-modal-info-div p {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 5px 15px;
+  text-align: center;
+  background-color: transparent;
+}
+
+.result-modal-info-div a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  margin: 10px;
+}
+
+.ReactModal__Overlay{
+  background-color: rgba(25, 25, 25, 0.75);
+}
+
+.ReactModal__Overlay--after-open{
+  background-color: rgba(25, 25, 25, 0.75);
+}

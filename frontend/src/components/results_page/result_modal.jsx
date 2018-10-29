@@ -2,22 +2,21 @@ import React from 'react'
 import "./result_modal.css";
 
 export default function ResultModal({data}) {
-  return (
-    <div className='result-modal'>
-      <a href={data.url} target="_blank">
-        <img 
-          src={data.image_url}
-          alt='result'
-        />
-      </a>
+  return <div className="result-modal">
+    <div className="result-modal-image-div hover-glow">
+        <a href={data.url} target="_blank">
+          <img src={data.image_url} alt="result" />
+        </a>
+      </div>
 
-      <a href={data.url} target="_blank">
-        {data.name}
-      </a>
+      <div className="result-modal-info-div">
+      <p className='hover-glow'>
+          <a href={data.url} target="_blank">
+            {data.name}
+          </a>
+        </p>
 
-      <p>
-        {data.address}
-      </p>
-    </div>
-  )
+        <p>{data.address}</p>
+      </div>
+    </div>;
 }

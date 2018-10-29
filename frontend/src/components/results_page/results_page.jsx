@@ -6,13 +6,24 @@ import ResultItem from './result_item'
 import ResultModal from './result_modal'
 
 const customStyles = {
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(25, 25, 25, 0.75)'
+  },
   content: {
     top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    padding: '0px',
+    background: 'black',
+    overflow: 'visible'
   }
 };
 
@@ -31,29 +42,18 @@ export default class resultsPage extends Component {
       }
     };
 
-    // this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openResultModal = this.openResultModal.bind(this);
   } 
-   // will be getting props for results
 
-  // openModal() {
-  //   this.setState({ modalIsOpen: true });
-  // }
   openResultModal(data) {
-    console.log('openResultModal ran');
-    
     this.setState({
       modalIsOpen: true, 
       modalComponent: (
         <ResultModal data={data} />
-      ) });
+      ) 
+    });
   }
-
-  // afterOpenModal() {
-  //   this.subtitle.style.color = '#f00';
-  // }
 
   closeModal() {
     this.setState({ modalIsOpen: false });
@@ -139,11 +139,11 @@ export default class resultsPage extends Component {
               modalFn={() => this.openResultModal(this.props.selectRestaurant)} 
             />
 
-            <ResultItem 
+            {/* <ResultItem 
               caption="Movie" 
               imgSrc="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93960a66ab95463358588dd85dc9d26&auto=format&fit=crop&w=1355&q=80"
-              // modalFn={() => this.openResultModal(this.props.selectActivity)} 
-            />
+              modalFn={() => console.log('movie result')} 
+            /> */}
 
             <ResultItem 
             caption="Event" 

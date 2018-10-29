@@ -34,46 +34,48 @@ export default class Form3FoodPref extends Component {
 
 
     render() {
-        return <div>
+        return             <div className="form-page-wlist">
+
+
             <h1>BoredNoMore</h1>
             <h4>For {this.props.name}</h4>
             <form>
               <h1>What do you like to eat?</h1>
-              <ul>
+              <ul className="form-list">
                 <li>
-                  <button onClick={this.handleSelect("chinese")} />
+                  <button onClick={this.handleSelect("chinese")} > CHINESE </button>
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("mexican")} />
+                  <button onClick={this.handleSelect("mexican")} > MEXICAN </button>
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("american")} />
+                  <button onClick={this.handleSelect("american")} > AMERICAN </button>
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("italian")} />
+                  <button onClick={this.handleSelect("italian")} > ITALIAN </button>
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("foodtrucks")} />
+                  <button onClick={this.handleSelect("foodtrucks")} > FOODTRUCKS </button>
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("coffee")} />
+                  <button onClick={this.handleSelect("coffee")} > COFFEE </button>
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("desserts")} />
+                  <button onClick={this.handleSelect("desserts")} > DESSERTS </button>
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("bars")} />
+                  <button onClick={this.handleSelect("bars")} > BARS </button>
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("cuisine9")} />
+                  <button onClick={this.handleSelect("cuisine9")} > OTHER </button>
                 </li>
               </ul>
             </form>
