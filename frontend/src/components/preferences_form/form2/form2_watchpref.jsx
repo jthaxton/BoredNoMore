@@ -23,7 +23,6 @@ export default class Form2WatchPref extends Component {
                     )
                 }
             }
-            console.log(this.state);
         }
     }
 

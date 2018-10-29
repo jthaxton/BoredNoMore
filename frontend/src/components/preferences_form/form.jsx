@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Form1 from './form1/form1_name_container';
 import Form15 from "./form1/form15_location";
-import Form2 from './form2/form2_watchpref_container';
-import Form3 from "./form3/form3_foodpref_container";
-import Form4 from "./form4/form4_eventpref_container";
-import Form5 from './form5/form5_sub_container';
-import Form6 from './form6/signup_container';
+import Form2 from './form2/form2_watchpref';
+import Form3 from "./form3/form3_foodpref";
+import Form4 from "./form4/form4_eventpref";
+import Form5 from './form5/form5_subs';
+import Form6 from './form6/signup';
 
 
 
