@@ -28,7 +28,7 @@ const UserSchema = new Schema({
   },
   preferences: {
     zip: {
-      type: Number,
+      type: Array,
       required: false
     },
     cuisine: {
