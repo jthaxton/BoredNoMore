@@ -21,6 +21,9 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    padding: '0px',
+    background: 'black',
+    overflow: 'visible'
   }
 };
 
@@ -136,11 +139,11 @@ export default class resultsPage extends Component {
               modalFn={() => this.openResultModal(this.props.selectRestaurant)} 
             />
 
-            <ResultItem 
+            {/* <ResultItem 
               caption="Movie" 
               imgSrc="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93960a66ab95463358588dd85dc9d26&auto=format&fit=crop&w=1355&q=80"
               modalFn={() => console.log('movie result')} 
-            />
+            /> */}
 
             <ResultItem 
             caption="Event" 
