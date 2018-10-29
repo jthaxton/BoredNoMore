@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 
+
 export default class SignUp extends Component {
 
     constructor(props) {
@@ -9,10 +10,13 @@ export default class SignUp extends Component {
             email: [],
             password: "" 
         };
+        console.log(this.props)
     }
 
-signUp(){
-    console.log("signup")       
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.saveEntries(this.state);
+        this.props.signUp(this.props).then(() => this.props.history.push('/results'));
     }
 
 
@@ -37,10 +41,13 @@ signUp(){
                         <input type="password"></input>
                     </li>
 
+
+                    <li><button 
+                            onClick={this.handleSubmit.bind(this)}
+                        >Sign Up!</button></li>
                 </ul>
                 </ul>
                 <div className="signup-button-options">
-                    <button>Sign Up!</button>
                 
 
                   <button onClick={this.signUp}>No, thanks.</button>

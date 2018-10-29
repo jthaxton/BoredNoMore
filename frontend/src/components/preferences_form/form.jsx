@@ -24,7 +24,7 @@ class Form extends Component {
             eventTypes: [],
             subs: []
         }
-        
+        console.log(this.props)
         this.nextStep = this.nextStep.bind(this);
         this.saveEntries = this.saveEntries.bind(this);
         // this.setState = this.setState.bind(this);
@@ -88,10 +88,13 @@ class Form extends Component {
                         saveEntries={this.saveEntries} />
         case 7:
             return <Form6
-                        name={this.state.name}
-                        email={this.state.email}
-                        password={this.state.password}
-                        saveEntries={this.saveEntries} />
+                        data={this.state}
+                        signUp={this.props.signUp}
+                        // name={this.state.name}
+                        // email={this.state.email}
+                        // password={this.state.password}
+                        saveEntries={this.saveEntries} 
+                        />
         default:
             return <Form1
                         name={this.state.name}
