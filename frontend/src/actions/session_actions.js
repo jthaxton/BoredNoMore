@@ -8,13 +8,7 @@ export const registerTheUser = (userData) => dispatch => (
             .then( user => { dispatch(signupUser(user))
         })
     )
-// export const registerTheUser = (userData) => {
-//     return dispatch => {
-//         return registerUser(userData).then( user => {
-//             return dispatch(signupUser(user))
-//         })
-//     }
-// }
+
 
 const signupUser = (user) => {
     return {

@@ -22,7 +22,7 @@ const sessionReducer = (state = _nullUser, action) => {
             };
         case SIGNUP_USER:
             return{
-                currentUser: action.user
+                currentUser: action.payload
             }
         default:
             return state;
