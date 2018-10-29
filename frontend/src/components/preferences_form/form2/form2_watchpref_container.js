@@ -4,8 +4,8 @@ import Form2 from './form2_watchpref';
 
 const mstp = (state) => {
     return {
-        name: state.entities.users.name,
-        currentUser: state.entities.users[state.session.currentUserId]
+        // name: state.entities.users.name,
+        // currentUser: state.entities.users[state.session.currentUserId]
     }
 }
 
