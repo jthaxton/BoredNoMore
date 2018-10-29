@@ -44,39 +44,39 @@ export default class Form2WatchPref extends Component {
               <h1>What do you like to watch?</h1>
               <ul>
                 <li>
-                  <button onClick={this.handleSelect("genre1")} />
+                  <button onClick={this.handleSelect("action")} />
                 </li>
 
                 <li>
-                  <button onClick={this.handleSelect("genre2")} />
+                  <button onClick={this.handleSelect("comedy")} />
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("genre3")} />
+                    <button onClick={this.handleSelect("drama")} />
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("genre4")} />
+                    <button onClick={this.handleSelect("romance")} />
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("genre5")} />
+                    <button onClick={this.handleSelect("horror")} />
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("genre6")} />
+                    <button onClick={this.handleSelect("documentary")} />
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("genre7")} />
+                    <button onClick={this.handleSelect("thriller")} />
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("genre8")} />
+                    <button onClick={this.handleSelect("kids")} />
                 </li>
 
                 <li>
-                    <button onClick={this.handleSelect("genre9")} />
+                    <button onClick={this.handleSelect("sci-fi/fantasy")} />
                 </li>
               </ul>
             </form>
