@@ -4,7 +4,7 @@ import Form15 from "./form1/form15_location";
 import Form2 from './form2/form2_watchpref';
 import Form3 from "./form3/form3_foodpref";
 import Form4 from "./form4/form4_eventpref";
-import Form5 from './form5/form5_subs';
+import Form5 from './form5/form5_activities';
 import Form6 from './form6/signup';
 
 

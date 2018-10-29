@@ -8,7 +8,7 @@ export default class Form5Activities extends Component {
         this.state = { activities: [] };
     }
 
-    handleSelect(sub) {
+    handleSelect(activity) {
         return (e) => {
             let activitiesArr = []
 
