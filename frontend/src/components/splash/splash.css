@@ -26,7 +26,8 @@
   position: absolute;
   margin: auto;
   font-size: 35px;
-  left: 43vw;
+  left: 37vw;
+  padding: 40px;
 }
 .splash-content {
   /* background-color: red; */
@@ -49,6 +50,7 @@
   height: 50px;
   border: none;
   /* outline: none; */
+  padding: 40px;
 }
 .splash-top-nav img {
   height: 35px;

@@ -83,7 +83,7 @@ export default class SplashComponent extends React.Component {
                 <h3>BoredNoMore</h3>
             </div>
             <div className="splash-content">
-                <h1>Need Recommendations?</h1>
+                <h1>Find fun events near you.</h1>
                 <button className="quiz-button"
                         onClick={this.openFormModal.bind(this)}>
                     TAKE QUIZ
